@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./App.css";
 
 const RESUME_URL =
-  "https://drive.google.com/file/d/1EnmFzLqJTzM_mCo4HYdCFOn8nsO-Ry22/view?usp=drivesdk";
+  "https://drive.google.com/file/d/1h21X9zY8HYQKRpmP3ik0KF11by4nJ93m/view?usp=drivesdk";
 
 const projects = [
   {
