@@ -2,168 +2,110 @@
 import { useState } from "react";
 import "./App.css";
 
-const skillGroups = [
-  { title: "Programming Languages", skills: ["Python", "JavaScript"] },
-  { title: "Frontend Development", skills: ["HTML", "CSS", "Bootstrap", "React.js"] },
-  { title: "Backend Development", skills: ["Node.js", "Express.js"] },
-  { title: "Database Management", skills: ["MySQL", "MongoDB"] },
-  {
-    title: "Data Analytics",
-    skills: ["Microsoft Excel", "Pivot Tables", "Data Visualization", "K-Means"],
-  },
-  { title: "Tools & Technologies", skills: ["Git", "GitHub", "VS Code"] },
-];
+const RESUME_URL =
+  "https://drive.google.com/file/d/1h21X9zY8HYQKRpmP3ik0KF11by4nJ93m/view?usp=drivesdk";
 
 const projects = [
   {
-    number: "01",
     title: "Book Basket",
-    category: "Full Stack",
+    category: "MERN Stack",
     description:
-      "An online library management system designed to make book discovery and personal library management easier.",
-    details:
-      "Developed using the MERN Stack with backend APIs, MongoDB integration, and the Open Library API.",
-    tech: ["React", "Node.js", "Express.js", "MongoDB", "Open Library API"],
+      "An online library management system built using MongoDB, Express.js, React.js and Node.js with book discovery and library management features.",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
     link: "https://github.com/PoojaPatelX13/Book-Basket",
   },
   {
-    number: "02",
     title: "Destiny Travels",
-    category: "Backend",
+    category: "Backend Development",
     description:
-      "A travel destination management REST API for organizing and managing destination information.",
-    details:
-      "Practiced CRUD operations, filtering, sorting, pagination, and API testing using Postman.",
-    tech: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Postman"],
+      "A travel destination management REST API developed using Node.js, Express.js and MongoDB.",
+    tech: ["Node.js", "Express", "MongoDB", "Postman"],
     link: "https://github.com/PoojaPatelX13/Destiny-Travels",
   },
   {
-    number: "03",
     title: "Technika Courses",
-    category: "Frontend",
+    category: "Frontend Development",
     description:
-      "An interactive course exploration application for browsing technical and programming courses.",
-    details:
-      "Created using React, reusable components, structured course data, and category-based filtering.",
-    tech: ["React", "JavaScript", "HTML", "CSS"],
+      "A React-based course listing application with course categories and filtering functionality.",
+    tech: ["React", "JavaScript", "CSS"],
     link: "https://github.com/PoojaPatelX13/Technika-Courses",
   },
   {
-    number: "04",
     title: "Cinescope",
-    category: "Frontend",
+    category: "Frontend Development",
     description:
-      "A movie discovery application for exploring movies, viewing details, and managing a personal watchlist.",
-    details:
-      "Built with React and reusable components for movie details and watchlist interfaces.",
-    tech: ["React", "JavaScript", "HTML", "CSS"],
+      "A movie discovery application featuring movie details and watchlist functionality.",
+    tech: ["React", "JavaScript", "CSS"],
     link: "https://github.com/PoojaPatelX13/Cinescope",
   },
   {
-    number: "05",
     title: "Foodie Card",
-    category: "Frontend",
+    category: "Web Development",
     description:
-      "A food-themed web interface featuring visually engaging food cards and organized content.",
-    details:
-      "A frontend practice project focused on card layouts, spacing, and visual presentation.",
+      "A food-themed web project focused on attractive layouts and user interface design.",
     tech: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/PoojaPatelX13/Foodie-Card",
   },
   {
-    number: "06",
-    title: "Bit-Demo",
-    category: "Frontend",
+    title: "Bit Demo",
+    category: "Web Development",
     description:
-      "A frontend practice project exploring webpage structure and core web development concepts.",
-    details:
-      "Created to strengthen practical understanding of frontend development fundamentals.",
+      "A web development practice project demonstrating frontend concepts and page design.",
     tech: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/PoojaPatelX13/Bit-Demo",
   },
   {
-    number: "07",
     title: "Type Rush",
-    category: "Frontend",
+    category: "JavaScript Project",
     description:
-      "A typing practice application designed to provide an interactive typing experience.",
-    details:
-      "A JavaScript practice project focused on user interaction, input handling, and dynamic interface updates.",
+      "A typing practice project designed to help users practice typing speed and accuracy.",
     tech: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/PoojaPatelX13/Type-Rush-",
   },
   {
-    number: "08",
     title: "Sales & Revenue Dashboard",
     category: "Data Analytics",
     description:
-      "An Excel dashboard created to present sales and revenue information in an organized visual format.",
-    details:
-      "Worked with sales data, Pivot Tables, and dashboard visualizations during the Data Analytics internship.",
-    tech: ["Microsoft Excel", "Pivot Tables", "Data Visualization"],
+      "An Excel dashboard project focused on sales performance, revenue analysis and data visualization.",
+    tech: ["Excel", "Pivot Tables", "Data Visualization"],
     link: "https://github.com/PoojaPatelX13",
   },
   {
-    number: "09",
     title: "Customer Segmentation",
     category: "Data Analytics",
     description:
-      "A data analytics project focused on grouping customers based on similarities in their data.",
-    details:
-      "Practiced customer segmentation using Python, Pandas, and K-Means clustering.",
-    tech: ["Python", "Pandas", "K-Means", "Data Analysis"],
+      "A customer segmentation project using K-Means clustering to identify customer groups.",
+    tech: ["Python", "K-Means", "Data Analytics"],
     link: "https://github.com/PoojaPatelX13",
   },
   {
-    number: "10",
-    title: "GitHub Profile README",
-    category: "Other",
+    title: "Predictive Analytics",
+    category: "Data Analytics",
     description:
-      "A personal GitHub profile introduction showcasing my technical interests and development journey.",
-    details:
-      "Organized my GitHub profile to introduce my skills, projects, and ongoing learning.",
-    tech: ["GitHub", "Markdown"],
-    link: "https://github.com/PoojaPatelX13/PoojaPatelX13",
+      "An internship project involving predictive analytics and data-based insights.",
+    tech: ["Python", "Data Analytics"],
+    link: "https://github.com/PoojaPatelX13",
   },
 ];
 
-const certifications = [
-  {
-    title: "Data Analytics Internship",
-    provider: "Thiranex EduTech LLP",
-    description:
-      "Gained practical experience in data analysis through Excel dashboards, customer segmentation, and predictive analytics assignments.",
-  },
-  {
-    title: "AI Fundamentals",
-    provider: "IBM SkillsBuild",
-    description:
-      "Learned fundamental artificial intelligence concepts and explored their applications in different fields.",
-  },
-  {
-    title: "AI Language and Vision",
-    provider: "IBM SkillsBuild",
-    description:
-      "Explored AI concepts related to language processing and computer vision.",
-  },
-  {
-    title: "Web Development Internship",
-    provider: "Thiranex EduTech LLP",
-    description:
-      "Practiced creating web pages using HTML, CSS, JavaScript, and Bootstrap, along with layout improvements and responsive testing.",
-  },
-  {
-    title: "Getting Started with Generative AI",
-    provider: "IBM SkillsBuild",
-    description:
-      "Learned the basics of generative AI and explored its uses in content creation and everyday applications.",
-  },
-  {
-    title: "Project Management",
-    provider: "IBM SkillsBuild",
-    description:
-      "Learned the fundamentals of project planning, organization, coordination, and project execution.",
-  },
+const skills = [
+  "Python",
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "Bootstrap",
+  "React.js",
+  "Node.js",
+  "Express.js",
+  "MySQL",
+  "MongoDB",
+  "Excel",
+  "Pivot Tables",
+  "Data Visualization",
+  "K-Means",
+  "Git",
+  "GitHub",
+  "VS Code",
 ];
 
 function SocialIcon({ type }) {
@@ -172,7 +114,7 @@ function SocialIcon({ type }) {
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path
           fill="currentColor"
-          d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.1.67-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.92.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.45 3.04-1.15 3.04-1.15.61 1.54.23 2.68.12 2.96.71.78 1.14 1.78 1.14 3.01 0 4.3-2.61 5.24-5.1 5.52.4.35.75 1.03.75 2.08V22c0 .29.2.63.77.52A11.1 11.1 0 0 0 12 .9Z"
+          d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.31-3.76-1.31-.51-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 .1.77 2.14 3.45 1.5.1-.73.4-1.23.71-1.51-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.56 0c2.11-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.23-5.1 5.51.4.35.76 1.02.76 2.06v3.05c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"
         />
       </svg>
     );
@@ -183,7 +125,7 @@ function SocialIcon({ type }) {
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path
           fill="currentColor"
-          d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.8H4.96V9.24h2.97v9.56ZM6.44 7.94a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm12.37 10.86h-2.96v-4.65c0-1.11-.02-2.53-1.54-2.53-1.54 0-1.78 1.2-1.78 2.45v4.73H9.57V9.24h2.84v1.31h.04c.4-.75 1.36-1.54 2.8-1.54 3 0 3.56 1.97 3.56 4.54v5.25Z"
+          d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.6H4.96V9.02h2.97v9.58ZM6.45 7.71a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm12.17 10.89h-2.97v-4.66c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.74H9.34V9.02h2.85v1.31h.04c.4-.75 1.37-1.55 2.82-1.55 3.01 0 3.57 1.98 3.57 4.55v5.27Z"
         />
       </svg>
     );
@@ -194,7 +136,7 @@ function SocialIcon({ type }) {
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path
           fill="currentColor"
-          d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm9 8.1L3.5 7h17L12 13.1ZM3 8.5V17h18V8.5l-9 7-9-7Z"
+          d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"
         />
       </svg>
     );
@@ -204,109 +146,122 @@ function SocialIcon({ type }) {
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path
         fill="currentColor"
-        d="M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1.5V8h4.5L14 3.5ZM7 12h10v1.5H7V12Zm0 3.5h10V17H7v-1.5Z"
+        d="M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1.5V8h4.5L14 3.5ZM8 12v1.5h8V12H8Zm0 3v1.5h8V15H8Z"
       />
     </svg>
   );
 }
 
-function App() {
-  const [activeFilter, setActiveFilter] = useState("All");
-  const [theme, setTheme] = useState("dark");
+function ProjectVisual({ title, category }) {
+  return (
+    <div className="project-visual">
+      <div className="browser-bar">
+        <span />
+        <span />
+        <span />
+        <div className="browser-address">pooja-portfolio / projects</div>
+      </div>
+      <div className="visual-content">
+        <div className="visual-symbol">{title.charAt(0)}</div>
+        <span>{category}</span>
+        <h3>{title}</h3>
+        <div className="visual-lines">
+          <i />
+          <i />
+          <i />
+        </div>
+      </div>
+    </div>
+  );
+}
 
-  const filters = [
-    "All",
-    "Full Stack",
-    "Frontend",
-    "Backend",
-    "Data Analytics",
-    "Other",
+function App() {
+  const [darkMode, setDarkMode] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navItems = [
+    "Home",
+    "About",
+    "Skills",
+    "Experience",
+    "Projects",
+    "Education",
+    "Certifications",
+    "Contact",
   ];
 
-  const filteredProjects =
-    activeFilter === "All"
-      ? projects
-      : projects.filter((project) => project.category === activeFilter);
-
-  const resumeUrl =
-    "https://drive.google.com/file/d/13TfvXssV8Ki58Et7eUtNu7TqS2GkjqoO/view";
-
-  const linkedinUrl =
-    "https://www.linkedin.com/in/pooja-patel-48666a386";
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className="portfolio" data-theme={theme}>
-      {/* NAVBAR */}
+    <div className={darkMode ? "app dark-theme" : "app light-theme"}>
       <header className="navbar">
-        <a href="#home" className="brand">
-          POOJA PATEL<span>.</span>
+        <a className="brand" href="#home" onClick={closeMenu}>
+          POOJA<span>.</span>
         </a>
 
-        <nav className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#certifications">Certificates</a>
-          <a href="#contact">Contact</a>
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation"
+        >
+          ☰
+        </button>
+
+        <nav className={menuOpen ? "nav-links open" : "nav-links"}>
+          {navItems.map((item) => (
+            <a key={item} href={`#${item.toLowerCase()}`} onClick={closeMenu}>
+              {item}
+            </a>
+          ))}
         </nav>
 
         <div className="nav-actions">
           <button
             className="theme-toggle"
-            onClick={() =>
-              setTheme(theme === "dark" ? "light" : "dark")
-            }
-            aria-label="Toggle colour theme"
-            title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle theme"
           >
-            {theme === "dark" ? "☀" : "☾"}
+            {darkMode ? "☀" : "☾"}
           </button>
-
           <a
-            className="nav-resume"
-            href={resumeUrl}
+            className="resume-icon"
+            href={RESUME_URL}
             target="_blank"
             rel="noreferrer"
+            aria-label="View Resume"
+            title="View Resume"
           >
             <SocialIcon type="resume" />
-            Resume
-            <span>↗</span>
           </a>
         </div>
       </header>
 
       <main>
-        {/* HOME */}
-        <section className="hero section-container" id="home">
+        <section className="hero section" id="home">
           <div className="hero-content">
-            <p className="eyebrow">
-              <span className="status-dot"></span>
-              WELCOME TO MY PORTFOLIO
-            </p>
+            <div className="availability">
+              <span className="status-dot" />
+              BCA STUDENT · OPEN TO OPPORTUNITIES
+            </div>
 
+            <p className="eyebrow">HELLO, I'M</p>
             <h1>
-              Hi, I'm <span>Pooja Patel.</span>
-              <br />
-              Building my journey in technology.
+              Pooja <span>Patel</span>
             </h1>
 
             <h2>
               BCA Student <span>|</span> MERN Stack Enthusiast
-              <span>|</span> Data Analytics Enthusiast
+              <span> | </span>Data Analytics Enthusiast
             </h2>
 
             <p className="hero-description">
-              Motivated BCA student with hands-on experience in Python,
-              JavaScript, MERN Stack, and Data Analytics. I enjoy building
-              web applications, exploring backend technologies, and working
-              with data. This portfolio showcases my projects, internship
-              experience, and learning journey.
+              Motivated BCA student with hands-on experience in web
+              development and data analytics. Passionate about building
+              practical applications, learning new technologies and solving
+              real-world problems.
             </p>
 
-            <div className="hero-actions">
+            <div className="hero-buttons">
               <a href="#projects" className="primary-button">
                 Explore My Work <span>↗</span>
               </a>
@@ -315,420 +270,368 @@ function App() {
               </a>
             </div>
 
-            <div className="hero-socials">
+            <div className="social-links">
               <a
                 href="https://github.com/PoojaPatelX13"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="GitHub profile"
+                aria-label="GitHub"
+                title="GitHub"
               >
                 <SocialIcon type="github" />
-                <span>GitHub</span>
               </a>
-
               <a
-                href={linkedinUrl}
+                href="https://www.linkedin.com/in/pooja-patel-48666a386"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="LinkedIn profile"
+                aria-label="LinkedIn"
+                title="LinkedIn"
               >
                 <SocialIcon type="linkedin" />
-                <span>LinkedIn</span>
               </a>
-
               <a
                 href="mailto:poojapatel53032@gmail.com"
-                aria-label="Send email"
+                aria-label="Email"
+                title="Email"
               >
                 <SocialIcon type="email" />
-                <span>Email</span>
+              </a>
+              <a
+                href={RESUME_URL}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Resume"
+                title="Resume"
+              >
+                <SocialIcon type="resume" />
               </a>
             </div>
           </div>
 
-          <div className="hero-image-area">
-            <div className="image-glow"></div>
-            <div className="profile-frame">
+          <div className="hero-image-wrap">
+            <div className="image-glow" />
+            <div className="hero-image-frame">
               <img src="/profile.jpg" alt="Pooja Patel" />
             </div>
-            <div className="image-caption">
-              <span className="caption-line"></span>
-              <span>LEARNING · BUILDING · GROWING</span>
+            <div className="floating-card">
+              <span className="floating-icon">✦</span>
+              <div>
+                <strong>Always Learning</strong>
+                <small>Growing every day</small>
+              </div>
             </div>
-            <div className="floating-label">BCA / 2024–2027</div>
+            <div className="hero-decoration decoration-one" />
+            <div className="hero-decoration decoration-two" />
           </div>
 
-          <div className="hero-bottom">
-            <span>BASED IN BENGALURU, INDIA</span>
-            <a href="#about">SCROLL TO EXPLORE ↓</a>
-          </div>
+          <a href="#about" className="scroll-indicator">
+            SCROLL TO EXPLORE <span>↓</span>
+          </a>
         </section>
 
-        {/* ABOUT */}
-        <section className="section-container about-section" id="about">
+        <section className="section about-section" id="about">
           <div className="section-heading">
-            <p className="eyebrow">01 / ABOUT ME</p>
-            <h2>Curious mind. Practical learning.</h2>
+            <p className="eyebrow">GET TO KNOW ME</p>
+            <h2>About <span>Me</span></h2>
+            <p>A little introduction about my journey and interests.</p>
           </div>
 
-          <div className="about-content">
-            <div className="about-intro">
+          <div className="about-grid">
+            <div className="about-card">
+              <span className="card-number">01 / ABOUT</span>
+              <h3>Who I Am</h3>
               <p>
-                I am a Bachelor of Computer Applications student at Aditya
-                Institute of Management Studies and Research, Bengaluru.
-                I am interested in web development, MERN Stack technologies,
-                and Data Analytics.
+                I am a Bachelor of Computer Applications (BCA) student from
+                Bengaluru, interested in web development and data analytics.
+                I enjoy learning technologies and applying my knowledge to
+                practical projects.
+              </p>
+              <p>
+                Through academic work and internships, I have gained
+                experience in building web pages, working with databases,
+                developing applications and analysing data.
               </p>
             </div>
 
             <div className="about-details">
-              <p>
-                Through academic assignments, personal projects, and
-                internships, I have gained practical experience in developing
-                web interfaces, working with backend APIs, managing databases,
-                and exploring data.
-              </p>
-              <p>
-                I believe in learning by building, improving my problem-solving
-                skills, and consistently exploring new technologies.
-              </p>
-              <a href="#contact" className="text-link">
-                LET'S CONNECT ↗
+              <div className="detail-card">
+                <span>⌘</span>
+                <div>
+                  <h4>Development</h4>
+                  <p>Building responsive web applications using MERN Stack.</p>
+                </div>
+              </div>
+              <div className="detail-card">
+                <span>▥</span>
+                <div>
+                  <h4>Data Analytics</h4>
+                  <p>Exploring data, dashboards and useful insights.</p>
+                </div>
+              </div>
+              <div className="detail-card">
+                <span>✧</span>
+                <div>
+                  <h4>Continuous Learning</h4>
+                  <p>Improving my technical and professional skills.</p>
+                </div>
+              </div>
+              <a
+                href={RESUME_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="text-link"
+              >
+                View My Resume <span>↗</span>
               </a>
             </div>
           </div>
         </section>
 
-        {/* SKILLS */}
-        <section className="section-container skills-section" id="skills">
+        <section className="section" id="skills">
           <div className="section-heading">
-            <p className="eyebrow">02 / TECHNICAL SKILLS</p>
-            <h2>Skills & Technologies</h2>
-            <p className="section-description">
-              My technical knowledge and tools developed through coursework,
-              internships, and practical projects.
-            </p>
+            <p className="eyebrow">WHAT I WORK WITH</p>
+            <h2>My <span>Skills</span></h2>
+            <p>Technologies and tools I have learned and practised.</p>
           </div>
 
-          <div className="skills-list">
-            {skillGroups.map((group, index) => (
-              <div className="skill-row" key={group.title}>
-                <div className="skill-category">
-                  <span className="skill-number">0{index + 1}</span>
-                  <h3>{group.title}</h3>
-                </div>
-
-                <div className="skill-tags">
-                  {group.skills.map((skill) => (
-                    <span key={skill}>{skill}</span>
-                  ))}
-                </div>
+          <div className="skills-grid">
+            {skills.map((skill, index) => (
+              <div className="skill-card" key={skill}>
+                <span className="skill-index">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span>{skill}</span>
+                <span className="skill-arrow">↗</span>
               </div>
             ))}
           </div>
         </section>
 
-        {/* EXPERIENCE */}
-        <section
-          className="section-container experience-section"
-          id="experience"
-        >
+        <section className="section" id="experience">
           <div className="section-heading">
-            <p className="eyebrow">03 / EXPERIENCE</p>
-            <h2>Learning through experience.</h2>
-            <p className="section-description">
-              Internship experience at Thiranex EduTech LLP.
-            </p>
+            <p className="eyebrow">MY JOURNEY</p>
+            <h2>Internship <span>Experience</span></h2>
+            <p>Practical learning and industry exposure.</p>
           </div>
 
-          <div className="experience-card">
-            <div className="experience-top">
-              <div>
-                <p className="experience-label">INTERNSHIP EXPERIENCE</p>
-                <h3>Thiranex EduTech LLP</h3>
+          <div className="experience-list">
+            <article className="experience-card">
+              <div className="experience-date">JUL – AUG 2026</div>
+              <div className="experience-info">
+                <span className="experience-label">INTERNSHIP</span>
+                <h3>Data Analytics Intern</h3>
+                <h4>Thiranex EduTech LLP · Remote</h4>
+                <ul>
+                  <li>Worked on sales and revenue analysis using Excel.</li>
+                  <li>
+                    Practised customer segmentation using K-Means clustering.
+                  </li>
+                  <li>Explored predictive analytics and data insights.</li>
+                </ul>
               </div>
-              <span className="experience-date">JULY – AUGUST 2026</span>
-            </div>
+            </article>
 
-            <div className="internship-item">
-              <h4>Data Analytics Intern</h4>
-              <p>
-                Gained practical experience in organizing, analyzing, and
-                presenting data through internship assignments.
-              </p>
-              <ul>
-                <li>Created a Sales and Revenue Dashboard using Excel.</li>
-                <li>Practiced customer segmentation using K-Means clustering.</li>
-                <li>Explored predictive analytics concepts and techniques.</li>
-              </ul>
-            </div>
-
-            <div className="internship-divider"></div>
-
-            <div className="internship-item">
-              <h4>Web Development Intern</h4>
-              <p>
-                Practiced building web pages and improving user interfaces
-                using frontend web technologies.
-              </p>
-              <ul>
-                <li>
-                  Created web pages using HTML, CSS, JavaScript, and Bootstrap.
-                </li>
-                <li>Worked on webpage layouts and user interface improvements.</li>
-                <li>
-                  Practiced testing webpage functionality and responsiveness.
-                </li>
-              </ul>
-            </div>
+            <article className="experience-card">
+              <div className="experience-date">JUL – AUG 2026</div>
+              <div className="experience-info">
+                <span className="experience-label">INTERNSHIP</span>
+                <h3>Web Development Intern</h3>
+                <h4>Thiranex EduTech LLP · Remote</h4>
+                <ul>
+                  <li>
+                    Practised creating web pages using HTML, CSS, JavaScript
+                    and Bootstrap.
+                  </li>
+                  <li>Worked on webpage layouts and user interface improvements.</li>
+                  <li>
+                    Practised testing webpage functionality and responsiveness.
+                  </li>
+                </ul>
+              </div>
+            </article>
           </div>
         </section>
 
-        {/* PROJECTS */}
-        <section className="section-container projects-section" id="projects">
+        <section className="section projects-section" id="projects">
           <div className="section-heading">
-            <p className="eyebrow">04 / SELECTED WORK</p>
-            <h2>Projects & practical work.</h2>
-            <p className="section-description">
-              A collection of academic, internship, and personal projects
-              reflecting my learning in web development, backend technologies,
-              and data analytics.
-            </p>
-          </div>
-
-          <div className="project-filter-area">
-            <span className="filter-heading">EXPLORE THE COLLECTION</span>
-
-            <div className="filter-buttons">
-              {filters.map((filter) => (
-                <button
-                  key={filter}
-                  className={activeFilter === filter ? "active" : ""}
-                  onClick={() => setActiveFilter(filter)}
-                >
-                  {filter}
-                </button>
-              ))}
-            </div>
+            <p className="eyebrow">SELECTED WORK</p>
+            <h2>My <span>Projects</span></h2>
+            <p>Some of the projects I have worked on and learned from.</p>
           </div>
 
           <div className="projects-grid">
-            {filteredProjects.map((project) => (
-              <article className="project-card" key={project.number}>
-                <div className="project-top">
-                  <span className="project-number">
-                    {project.number} / 10
-                  </span>
-                  <span className="project-category">
-                    {project.category}
-                  </span>
+            {projects.map((project, index) => (
+              <article className="project-card" key={project.title}>
+                <ProjectVisual
+                  title={project.title}
+                  category={project.category}
+                />
+                <div className="project-content">
+                  <div className="project-topline">
+                    <span>{project.category}</span>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                  </div>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className="tech-tags">
+                    {project.tech.map((tech) => (
+                      <span key={tech}>{tech}</span>
+                    ))}
+                  </div>
+                  <a
+                    className="project-link"
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Project <span>↗</span>
+                  </a>
                 </div>
-
-                <h3>{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                <p className="project-details">{project.details}</p>
-
-                <div className="project-tech">
-                  {project.tech.map((technology) => (
-                    <span key={technology}>{technology}</span>
-                  ))}
-                </div>
-
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-link"
-                >
-                  VIEW PROJECT <span>↗</span>
-                </a>
               </article>
             ))}
           </div>
         </section>
 
-        {/* EDUCATION */}
-        <section className="section-container education-section" id="education">
+        <section className="section" id="education">
           <div className="section-heading">
-            <p className="eyebrow">05 / EDUCATION</p>
-            <h2>My academic journey.</h2>
-            <p className="section-description">
-              My educational background and academic progress.
-            </p>
+            <p className="eyebrow">ACADEMIC BACKGROUND</p>
+            <h2>My <span>Education</span></h2>
+            <p>My academic journey.</p>
           </div>
 
           <div className="education-list">
             <article className="education-card">
-              <div className="education-info">
-                <span className="education-date">2024 – 2027</span>
+              <div className="education-year">2024 – 2027</div>
+              <div>
+                <span className="experience-label">UNDERGRADUATE</span>
                 <h3>Bachelor of Computer Applications (BCA)</h3>
-                <h4>Aditya Institute of Management Studies and Research</h4>
+                <p>Aditya Institute of Management Studies and Research</p>
                 <p>Bengaluru City University, Bengaluru</p>
-                <p className="education-description">
-                  Currently pursuing BCA, developing knowledge in computer
-                  applications, programming, web technologies, and databases.
-                </p>
-              </div>
-
-              <div className="education-score">
-                <span>4TH SEMESTER</span>
-                <strong>8.02</strong>
-                <small>SGPA</small>
+                <span className="education-score">4th Semester SGPA: 8.02</span>
               </div>
             </article>
 
             <article className="education-card">
-              <div className="education-info">
-                <span className="education-date">PUC</span>
+              <div className="education-year">PUC</div>
+              <div>
+                <span className="experience-label">PRE-UNIVERSITY</span>
                 <h3>Pre-University Course</h3>
-                <p>Completed higher secondary education.</p>
-              </div>
-
-              <div className="education-score">
-                <strong>58%</strong>
-                <small>Percentage</small>
+                <p>Percentage: 58%</p>
               </div>
             </article>
 
             <article className="education-card">
-              <div className="education-info">
-                <span className="education-date">SSLC</span>
+              <div className="education-year">SSLC</div>
+              <div>
+                <span className="experience-label">SCHOOL</span>
                 <h3>Secondary School Leaving Certificate</h3>
-                <p>Completed secondary school education.</p>
-              </div>
-
-              <div className="education-score">
-                <strong>85%</strong>
-                <small>Percentage</small>
+                <p>Percentage: 85%</p>
               </div>
             </article>
           </div>
         </section>
 
-        {/* CERTIFICATIONS */}
-        <section
-          className="section-container certificates-section"
-          id="certifications"
-        >
+        <section className="section" id="certifications">
           <div className="section-heading">
-            <p className="eyebrow">06 / CERTIFICATIONS</p>
-            <h2>Certifications & continuous learning.</h2>
-            <p className="section-description">
-              Internship and professional learning certifications in
-              technology, artificial intelligence, data analytics, and
-              web development.
-            </p>
+            <p className="eyebrow">LEARNING & ACHIEVEMENTS</p>
+            <h2>My <span>Certifications</span></h2>
+            <p>Courses and certifications supporting my learning journey.</p>
           </div>
 
-          <div className="certificates-grid">
-            {certifications.map((certificate, index) => (
-              <article className="certificate-item" key={certificate.title}>
-                <span className="certificate-number">0{index + 1}</span>
-
-                <div className="certificate-content">
-                  <h3>{certificate.title}</h3>
-                  <span className="certificate-provider">
-                    {certificate.provider}
-                  </span>
-                  <p>{certificate.description}</p>
+          <div className="certifications-grid">
+            {[
+              "Data Analytics Internship",
+              "Web Development Internship",
+              "AI Fundamentals",
+              "AI Language and Vision",
+              "Getting Started with Generative AI",
+              "Project Management",
+            ].map((certificate, index) => (
+              <div className="certificate-card" key={certificate}>
+                <div className="certificate-icon">✧</div>
+                <div>
+                  <span>CERTIFICATION {String(index + 1).padStart(2, "0")}</span>
+                  <h3>{certificate}</h3>
                 </div>
-              </article>
+                <span className="certificate-arrow">↗</span>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* CONTACT */}
-        <section className="section-container contact-section" id="contact">
-          <div className="contact-content">
-            <p className="eyebrow">07 / GET IN TOUCH</p>
-            <h2>
-              Have an opportunity
-              <br />
-              or a project in mind?
-            </h2>
-            <p>
-              I would love to connect, learn, and explore opportunities in
-              technology.
-            </p>
-            <a
-              href="mailto:poojapatel53032@gmail.com"
-              className="primary-button"
-            >
-              Let's Talk <span>↗</span>
-            </a>
-          </div>
-
-          <div className="contact-details">
+        <section className="section contact-section" id="contact">
+          <div className="contact-panel">
             <div>
-              <span>EMAIL</span>
-              <a href="mailto:poojapatel53032@gmail.com">
-                poojapatel53032@gmail.com
-              </a>
-            </div>
-
-            <div>
-              <span>PHONE</span>
-              <a href="tel:+918652136933">+91 8652136933</a>
-            </div>
-
-            <div>
-              <span>LOCATION</span>
-              <p>Bengaluru, Karnataka, India</p>
-            </div>
-
-            <div>
-              <span>PROFILES</span>
-              <div className="contact-socials">
-                <a
-                  href="https://github.com/PoojaPatelX13"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="GitHub"
-                >
-                  <SocialIcon type="github" />
-                </a>
-
-                <a
-                  href={linkedinUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="LinkedIn"
-                >
-                  <SocialIcon type="linkedin" />
-                </a>
-
-                <a
-                  href="mailto:poojapatel53032@gmail.com"
-                  aria-label="Email"
-                >
-                  <SocialIcon type="email" />
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <span>RESUME</span>
+              <p className="eyebrow">LET'S CONNECT</p>
+              <h2>Have a project or opportunity in mind?</h2>
+              <p>
+                I would love to connect, learn and explore new opportunities.
+                Feel free to reach out.
+              </p>
               <a
-                href={resumeUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="contact-resume"
+                href="mailto:poojapatel53032@gmail.com"
+                className="primary-button"
               >
-                <SocialIcon type="resume" />
-                View Resume ↗
+                Get In Touch <span>↗</span>
               </a>
+            </div>
+
+            <div className="contact-details">
+              <a href="mailto:poojapatel53032@gmail.com">
+                <SocialIcon type="email" />
+                <span>
+                  <small>EMAIL</small>
+                  poojapatel53032@gmail.com
+                </span>
+              </a>
+              <a href="tel:+918652136933">
+                <span className="contact-symbol">☎</span>
+                <span>
+                  <small>PHONE</small>
+                  +91 8652136933
+                </span>
+              </a>
+              <div className="contact-location">
+                <span className="contact-symbol">⌖</span>
+                <span>
+                  <small>LOCATION</small>
+                  Bengaluru, Karnataka, India
+                </span>
+              </div>
             </div>
           </div>
         </section>
       </main>
 
-      {/* FOOTER */}
       <footer className="footer">
-        <a href="#home" className="brand">
-          POOJA PATEL<span>.</span>
+        <a className="brand" href="#home">
+          POOJA<span>.</span>
         </a>
         <p>Designed & built by Pooja Patel</p>
-        <span>© 2026 ALL RIGHTS RESERVED</span>
+        <div className="footer-socials">
+          <a
+            href="https://github.com/PoojaPatelX13"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+          >
+            <SocialIcon type="github" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/pooja-patel-48666a386"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
+            <SocialIcon type="linkedin" />
+          </a>
+          <a href="mailto:poojapatel53032@gmail.com" aria-label="Email">
+            <SocialIcon type="email" />
+          </a>
+        </div>
+        <span className="copyright">
+          © {new Date().getFullYear()} Pooja Patel. All rights reserved.
+        </span>
       </footer>
     </div>
   );
