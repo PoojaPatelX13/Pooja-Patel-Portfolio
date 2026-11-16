@@ -10,55 +10,52 @@ const projects = [
     title: "Book Basket",
     category: "MERN Stack",
     description:
-      "An online library management system built using MongoDB, Express.js, React.js and Node.js with book discovery and library management features.",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
+      "An online library management system that helps users explore books and manage their personal library.",
+    tech: ["MongoDB", "Express.js", "React", "Node.js"],
     link: "https://github.com/PoojaPatelX13/Book-Basket",
   },
   {
     title: "Destiny Travels",
     category: "Backend Development",
     description:
-      "A travel destination management REST API developed using Node.js, Express.js and MongoDB.",
-    tech: ["Node.js", "Express", "MongoDB", "Postman"],
+      "A travel destination API built using Express.js and MongoDB with CRUD operations.",
+    tech: ["Node.js", "Express.js", "MongoDB"],
     link: "https://github.com/PoojaPatelX13/Destiny-Travels",
   },
   {
     title: "Technika Courses",
-    category: "Frontend Development",
+    category: "React",
     description:
-      "A React-based course listing application with course categories and filtering functionality.",
+      "A React application displaying technical and programming courses with category filters.",
     tech: ["React", "JavaScript", "CSS"],
     link: "https://github.com/PoojaPatelX13/Technika-Courses",
   },
   {
     title: "Cinescope",
-    category: "Frontend Development",
+    category: "Web Development",
     description:
-      "A movie discovery application featuring movie details and watchlist functionality.",
+      "A movie browsing application with movie details and watchlist functionality.",
     tech: ["React", "JavaScript", "CSS"],
     link: "https://github.com/PoojaPatelX13/Cinescope",
   },
   {
     title: "Foodie Card",
     category: "Web Development",
-    description:
-      "A food-themed web project focused on attractive layouts and user interface design.",
+    description: "A food-themed card interface built as a frontend project.",
     tech: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/PoojaPatelX13/Foodie-Card",
   },
   {
     title: "Bit Demo",
     category: "Web Development",
-    description:
-      "A web development practice project demonstrating frontend concepts and page design.",
+    description: "A practical frontend development project.",
     tech: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/PoojaPatelX13/Bit-Demo",
   },
   {
     title: "Type Rush",
-    category: "JavaScript Project",
-    description:
-      "A typing practice project designed to help users practise typing speed and accuracy.",
+    category: "JavaScript",
+    description: "A typing practice project built using web technologies.",
     tech: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/PoojaPatelX13/Type-Rush-",
   },
@@ -66,7 +63,7 @@ const projects = [
     title: "Sales & Revenue Dashboard",
     category: "Data Analytics",
     description:
-      "An Excel dashboard project focused on sales performance, revenue analysis and data visualization.",
+      "An Excel dashboard project focused on sales performance and revenue insights.",
     tech: ["Excel", "Pivot Tables", "Data Visualization"],
     link: "https://github.com/PoojaPatelX13",
   },
@@ -74,7 +71,7 @@ const projects = [
     title: "Customer Segmentation",
     category: "Data Analytics",
     description:
-      "A customer segmentation project using K-Means clustering to identify customer groups.",
+      "A customer segmentation project using the K-Means clustering approach.",
     tech: ["Python", "K-Means", "Data Analytics"],
     link: "https://github.com/PoojaPatelX13",
   },
@@ -82,121 +79,55 @@ const projects = [
     title: "Predictive Analytics",
     category: "Data Analytics",
     description:
-      "An internship project involving predictive analytics and data-based insights.",
-    tech: ["Python", "Data Analytics"],
+      "An internship project exploring data patterns and predictive analysis.",
+    tech: ["Python", "Data Analysis"],
     link: "https://github.com/PoojaPatelX13",
   },
 ];
 
-const skills = [
-  "Python",
-  "JavaScript",
-  "HTML",
-  "CSS",
-  "Bootstrap",
-  "React.js",
-  "Node.js",
-  "Express.js",
-  "MySQL",
-  "MongoDB",
-  "Excel",
-  "Pivot Tables",
-  "Data Visualization",
-  "K-Means",
-  "Git",
-  "GitHub",
-  "VS Code",
+const skillGroups = [
+  {
+    title: "Programming",
+    skills: ["Python", "JavaScript", "HTML", "CSS"],
+  },
+  {
+    title: "MERN Stack",
+    skills: ["React", "Node.js", "Express.js", "MongoDB"],
+  },
+  {
+    title: "Database",
+    skills: ["MySQL", "MongoDB"],
+  },
+  {
+    title: "Data Analytics",
+    skills: ["Microsoft Excel", "Pivot Tables", "K-Means", "Data Visualization"],
+  },
+  {
+    title: "Tools",
+    skills: ["VS Code", "Git", "GitHub", "Bootstrap"],
+  },
 ];
 
-function SocialIcon({ type }) {
-  if (type === "github") {
-    return (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          fill="currentColor"
-          d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.31-3.76-1.31-.51-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 .1.77 2.14 3.45 1.5.1-.73.4-1.23.71-1.51-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.56 0c2.11-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.23-5.1 5.51.4.35.76 1.02.76 2.06v3.05c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"
-        />
-      </svg>
-    );
-  }
-
-  if (type === "linkedin") {
-    return (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          fill="currentColor"
-          d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.6H4.96V9.02h2.97v9.58ZM6.45 7.71a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm12.17 10.89h-2.97v-4.66c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.74H9.34V9.02h2.85v1.31h.04c.4-.75 1.37-1.55 2.82-1.55 3.01 0 3.57 1.98 3.57 4.55v5.27Z"
-        />
-      </svg>
-    );
-  }
-
-  if (type === "email") {
-    return (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          fill="currentColor"
-          d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"
-        />
-      </svg>
-    );
-  }
-
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        fill="currentColor"
-        d="M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1.5V8h4.5L14 3.5ZM8 12v1.5h8V12H8Zm0 3v1.5h8V15H8Z"
-      />
-    </svg>
-  );
-}
-
-function ProjectVisual({ title, category }) {
-  return (
-    <div className="project-visual">
-      <div className="browser-bar">
-        <span />
-        <span />
-        <span />
-        <div className="browser-address">pooja-portfolio / projects</div>
-      </div>
-      <div className="visual-content">
-        <div className="visual-symbol">{title.charAt(0)}</div>
-        <span>{category}</span>
-        <h3>{title}</h3>
-        <div className="visual-lines">
-          <i />
-          <i />
-          <i />
-        </div>
-      </div>
-    </div>
-  );
-}
+const certificates = [
+  "Data Analytics Internship",
+  "Web Development Internship",
+  "AI Fundamentals",
+  "AI Language and Vision",
+  "Getting Started with Generative AI",
+  "Project Management",
+];
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const navItems = [
-    "Home",
-    "About",
-    "Skills",
-    "Experience",
-    "Projects",
-    "Education",
-    "Certifications",
-    "Contact",
-  ];
+  const [darkMode, setDarkMode] = useState(true);
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className={darkMode ? "app dark-theme" : "app light-theme"}>
+    <div className={darkMode ? "portfolio dark" : "portfolio light"}>
       <header className="navbar">
-        <a className="brand" href="#home" onClick={closeMenu}>
-          POOJA<span>.</span>
+        <a href="#home" className="logo" onClick={closeMenu}>
+          Pooja<span>.</span>
         </a>
 
         <button
@@ -208,14 +139,25 @@ function App() {
         </button>
 
         <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-          {navItems.map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} onClick={closeMenu}>
-              {item}
-            </a>
-          ))}
-        </nav>
+          {["Home", "About", "Skills", "Experience", "Projects", "Education", "Contact"].map(
+            (item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                onClick={closeMenu}
+              >
+                {item}
+              </a>
+            )
+          )}
 
-        <div className="nav-actions">
+          <a href={RESUME_URL} target="_blank" rel="noreferrer" aria-label="Resume">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <path d="M14 2v6h6M8 13h8M8 17h8" />
+            </svg>
+          </a>
+
           <button
             className="theme-toggle"
             onClick={() => setDarkMode(!darkMode)}
@@ -223,49 +165,28 @@ function App() {
           >
             {darkMode ? "☀" : "☾"}
           </button>
-          <a
-            className="resume-icon"
-            href={RESUME_URL}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="View Resume"
-            title="View Resume"
-          >
-            <SocialIcon type="resume" />
-          </a>
-        </div>
+        </nav>
       </header>
 
       <main>
         <section className="hero section" id="home">
           <div className="hero-content">
-            <div className="availability">
-              <span className="status-dot" />
-              BCA STUDENT · OPEN TO OPPORTUNITIES
-            </div>
-
             <p className="eyebrow">HELLO, I'M</p>
             <h1>
               Pooja <span>Patel</span>
             </h1>
-
-            <h2>
-              BCA Student <span>|</span> MERN Stack Enthusiast
-              <span> | </span>Data Analytics Enthusiast
-            </h2>
-
+            <h2>BCA Student | MERN Stack Enthusiast | Data Analytics Enthusiast</h2>
             <p className="hero-description">
-              Motivated BCA student with hands-on experience in web
-              development and data analytics. Passionate about building
-              practical applications, learning new technologies and solving
-              real-world problems.
+              I am a motivated BCA student interested in building web
+              applications and exploring data analytics. I enjoy learning new
+              technologies and turning ideas into practical projects.
             </p>
 
-            <div className="hero-buttons">
-              <a href="#projects" className="primary-button">
-                Explore My Work <span>↗</span>
+            <div className="hero-actions">
+              <a href="#projects" className="primary-btn">
+                Explore My Work
               </a>
-              <a href="#contact" className="secondary-button">
+              <a href="#contact" className="secondary-btn">
                 Contact Me
               </a>
             </div>
@@ -276,362 +197,296 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                title="GitHub"
               >
-                <SocialIcon type="github" />
+                <svg viewBox="0 0 24 24">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                </svg>
               </a>
+
               <a
                 href="https://www.linkedin.com/in/pooja-patel-48666a386"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                title="LinkedIn"
               >
-                <SocialIcon type="linkedin" />
+                <svg viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
               </a>
-              <a
-                href="mailto:poojapatel53032@gmail.com"
-                aria-label="Email"
-                title="Email"
-              >
-                <SocialIcon type="email" />
+
+              <a href="mailto:poojapatel53032@gmail.com" aria-label="Email">
+                <svg viewBox="0 0 24 24">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-10 7L2 7" />
+                </svg>
               </a>
+
               <a
                 href={RESUME_URL}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Resume"
-                title="Resume"
               >
-                <SocialIcon type="resume" />
+                <svg viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <path d="M14 2v6h6M8 13h8M8 17h8" />
+                </svg>
               </a>
             </div>
           </div>
 
-          <div className="hero-image-wrap">
-            <div className="image-glow" />
-            <div className="hero-image-frame">
-              <img src="/profile.jpg" alt="Pooja Patel" />
+          <div className="hero-image">
+            <div className="image-frame">
+              <img
+                src="/profile.jpg"
+                alt="Pooja Patel"
+                onError={(event) => {
+                  event.currentTarget.style.display = "none";
+                }}
+              />
+              <div className="image-placeholder">PP</div>
             </div>
-            <div className="floating-card">
-              <span className="floating-icon">✦</span>
-              <div>
-                <strong>Always Learning</strong>
-                <small>Growing every day</small>
-              </div>
-            </div>
-            <div className="hero-decoration decoration-one" />
-            <div className="hero-decoration decoration-two" />
+            <div className="floating-tag">Aspiring Software Developer</div>
           </div>
-
-          <a href="#about" className="scroll-indicator">
-            SCROLL TO EXPLORE <span>↓</span>
-          </a>
         </section>
 
         <section className="section about-section" id="about">
-          <div className="section-heading">
-            <p className="eyebrow">GET TO KNOW ME</p>
-            <h2>About <span>Me</span></h2>
-            <p>A little introduction about my journey and interests.</p>
-          </div>
+          <p className="eyebrow">GET TO KNOW ME</p>
+          <h2 className="section-title">
+            About <span>Me</span>
+          </h2>
 
-          <div className="about-grid">
-            <div className="about-card">
-              <span className="card-number">01 / ABOUT</span>
-              <h3>Who I Am</h3>
+          <div className="about-content">
+            <div>
+              <h3>Building skills. Creating possibilities.</h3>
               <p>
-                I am a Bachelor of Computer Applications (BCA) student from
-                Bengaluru, interested in web development and data analytics.
-                I enjoy learning technologies and applying my knowledge to
-                practical projects.
+                I am a Bachelor of Computer Applications student at Aditya
+                Institute of Management Studies and Research, Bengaluru City
+                University. I am passionate about technology, web development,
+                and data analytics.
               </p>
               <p>
-                Through academic work and internships, I have gained
-                experience in building web pages, working with databases,
-                developing applications and analysing data.
+                Through academic work, internships, and personal projects, I
+                have gained practical exposure to programming, frontend
+                development, backend development, and data analysis.
               </p>
-            </div>
-
-            <div className="about-details">
-              <div className="detail-card">
-                <span>⌘</span>
-                <div>
-                  <h4>Development</h4>
-                  <p>Building responsive web applications using MERN Stack.</p>
-                </div>
-              </div>
-              <div className="detail-card">
-                <span>▥</span>
-                <div>
-                  <h4>Data Analytics</h4>
-                  <p>Exploring data, dashboards and useful insights.</p>
-                </div>
-              </div>
-              <div className="detail-card">
-                <span>✧</span>
-                <div>
-                  <h4>Continuous Learning</h4>
-                  <p>Improving my technical and professional skills.</p>
-                </div>
-              </div>
+              <p>
+                I am a hardworking, responsible, and quick learner who enjoys
+                improving my technical skills and taking on new challenges.
+              </p>
               <a
                 href={RESUME_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="text-link"
+                className="primary-btn"
               >
-                View My Resume <span>↗</span>
+                View My Resume ↗
               </a>
+            </div>
+
+            <div className="about-stats">
+              <div className="stat-card">
+                <strong>10+</strong>
+                <span>Projects</span>
+              </div>
+              <div className="stat-card">
+                <strong>2</strong>
+                <span>Internships</span>
+              </div>
+              <div className="stat-card">
+                <strong>2024–27</strong>
+                <span>BCA Journey</span>
+              </div>
+              <div className="stat-card">
+                <strong>6+</strong>
+                <span>Certificates</span>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="section" id="skills">
-          <div className="section-heading">
-            <p className="eyebrow">WHAT I WORK WITH</p>
-            <h2>My <span>Skills</span></h2>
-            <p>Technologies and tools I have learned and practised.</p>
-          </div>
+          <p className="eyebrow">WHAT I WORK WITH</p>
+          <h2 className="section-title">
+            My <span>Skills</span>
+          </h2>
 
           <div className="skills-grid">
-            {skills.map((skill, index) => (
-              <div className="skill-card" key={skill}>
-                <span className="skill-index">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span>{skill}</span>
-                <span className="skill-arrow">↗</span>
+            {skillGroups.map((group) => (
+              <div className="skill-card" key={group.title}>
+                <h3>{group.title}</h3>
+                <div className="skill-tags">
+                  {group.skills.map((skill) => (
+                    <span key={skill}>{skill}</span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
         </section>
 
         <section className="section" id="experience">
-          <div className="section-heading">
-            <p className="eyebrow">MY JOURNEY</p>
-            <h2>Internship <span>Experience</span></h2>
-            <p>Practical learning and industry exposure.</p>
+          <p className="eyebrow">MY PROFESSIONAL JOURNEY</p>
+          <h2 className="section-title">
+            Internship <span>Experience</span>
+          </h2>
+
+          <div className="experience-card">
+            <div className="experience-top">
+              <div>
+                <h3>Data Analytics Intern</h3>
+                <p>Thiranex EduTech LLP</p>
+              </div>
+              <span>July – August 2026</span>
+            </div>
+            <ul>
+              <li>Worked on sales and revenue analysis using Microsoft Excel.</li>
+              <li>Practiced customer segmentation using K-Means clustering.</li>
+              <li>Explored predictive analytics and data interpretation.</li>
+            </ul>
           </div>
 
-          <div className="experience-list">
-            <article className="experience-card">
-              <div className="experience-date">JUL – AUG 2026</div>
-              <div className="experience-info">
-                <span className="experience-label">INTERNSHIP</span>
-                <h3>Data Analytics Intern</h3>
-                <h4>Thiranex EduTech LLP · Remote</h4>
-                <ul>
-                  <li>Worked on sales and revenue analysis using Excel.</li>
-                  <li>
-                    Practised customer segmentation using K-Means clustering.
-                  </li>
-                  <li>Explored predictive analytics and data insights.</li>
-                </ul>
-              </div>
-            </article>
-
-            <article className="experience-card">
-              <div className="experience-date">JUL – AUG 2026</div>
-              <div className="experience-info">
-                <span className="experience-label">INTERNSHIP</span>
+          <div className="experience-card">
+            <div className="experience-top">
+              <div>
                 <h3>Web Development Intern</h3>
-                <h4>Thiranex EduTech LLP · Remote</h4>
-                <ul>
-                  <li>
-                    Practised creating web pages using HTML, CSS, JavaScript
-                    and Bootstrap.
-                  </li>
-                  <li>Worked on webpage layouts and user interface improvements.</li>
-                  <li>
-                    Practised testing webpage functionality and responsiveness.
-                  </li>
-                </ul>
+                <p>Thiranex EduTech LLP</p>
               </div>
-            </article>
+              <span>July – August 2026</span>
+            </div>
+            <ul>
+              <li>Practiced creating web pages using HTML, CSS, JavaScript, and Bootstrap.</li>
+              <li>Worked on webpage layouts and user interface improvements.</li>
+              <li>Practiced testing webpage functionality and responsiveness.</li>
+            </ul>
           </div>
         </section>
 
-        <section className="section projects-section" id="projects">
-          <div className="section-heading">
-            <p className="eyebrow">SELECTED WORK</p>
-            <h2>My <span>Projects</span></h2>
-            <p>Some of the projects I have worked on and learned from.</p>
-          </div>
+        <section className="section" id="projects">
+          <p className="eyebrow">SOME THINGS I'VE BUILT</p>
+          <h2 className="section-title">
+            My <span>Projects</span>
+          </h2>
 
           <div className="projects-grid">
             {projects.map((project, index) => (
               <article className="project-card" key={project.title}>
-                <ProjectVisual
-                  title={project.title}
-                  category={project.category}
-                />
-                <div className="project-content">
-                  <div className="project-topline">
-                    <span>{project.category}</span>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                  </div>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <div className="tech-tags">
-                    {project.tech.map((tech) => (
-                      <span key={tech}>{tech}</span>
-                    ))}
-                  </div>
-                  <a
-                    className="project-link"
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    View Project <span>↗</span>
-                  </a>
+                <div className="project-number">
+                  {String(index + 1).padStart(2, "0")}
                 </div>
+                <p className="project-category">{project.category}</p>
+                <h3>{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                <div className="project-tech">
+                  {project.tech.map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-link"
+                >
+                  View Project ↗
+                </a>
               </article>
             ))}
           </div>
         </section>
 
         <section className="section" id="education">
-          <div className="section-heading">
-            <p className="eyebrow">ACADEMIC BACKGROUND</p>
-            <h2>My <span>Education</span></h2>
-            <p>My academic journey.</p>
+          <p className="eyebrow">MY ACADEMIC BACKGROUND</p>
+          <h2 className="section-title">
+            <span>Education</span>
+          </h2>
+
+          <div className="education-card">
+            <span className="education-year">2024 – 2027</span>
+            <h3>Bachelor of Computer Applications (BCA)</h3>
+            <p>Aditya Institute of Management Studies and Research</p>
+            <p>Bengaluru City University, Bengaluru</p>
           </div>
-
-          <div className="education-list">
-            <article className="education-card">
-              <div className="education-year">2024 – 2027</div>
-              <div>
-                <span className="experience-label">UNDERGRADUATE</span>
-                <h3>Bachelor of Computer Applications (BCA)</h3>
-                <p>Aditya Institute of Management Studies and Research</p>
-                <p>Bengaluru City University, Bengaluru</p>
-                <span className="education-score">4th Semester SGPA: 8.02</span>
-              </div>
-            </article>
-
-            <article className="education-card">
-              <div className="education-year">PUC</div>
-              <div>
-                <span className="experience-label">PRE-UNIVERSITY</span>
-                <h3>Pre-University Course</h3>
-                <p>Percentage: 58%</p>
-              </div>
-            </article>
-
-            <article className="education-card">
-              <div className="education-year">SSLC</div>
-              <div>
-                <span className="experience-label">SCHOOL</span>
-                <h3>Secondary School Leaving Certificate</h3>
-                <p>Percentage: 85%</p>
-              </div>
-            </article>
+          <div className="education-card">
+            <h3>Pre-University Course (PUC)</h3>
+            <p>Completed Higher Secondary Education</p>
+          </div>
+          <div className="education-card">
+            <h3>SSLC</h3>
+            <p>Completed Secondary School Education</p>
           </div>
         </section>
 
         <section className="section" id="certifications">
-          <div className="section-heading">
-            <p className="eyebrow">LEARNING & ACHIEVEMENTS</p>
-            <h2>My <span>Certifications</span></h2>
-            <p>Courses and certifications supporting my learning journey.</p>
-          </div>
-
-          <div className="certifications-grid">
-            {[
-              "Data Analytics Internship",
-              "Web Development Internship",
-              "AI Fundamentals",
-              "AI Language and Vision",
-              "Getting Started with Generative AI",
-              "Project Management",
-            ].map((certificate, index) => (
+          <p className="eyebrow">CONTINUOUS LEARNING</p>
+          <h2 className="section-title">
+            My <span>Certifications</span>
+          </h2>
+          <div className="certificates-grid">
+            {certificates.map((certificate) => (
               <div className="certificate-card" key={certificate}>
-                <div className="certificate-icon">✧</div>
-                <div>
-                  <span>CERTIFICATION {String(index + 1).padStart(2, "0")}</span>
-                  <h3>{certificate}</h3>
-                </div>
-                <span className="certificate-arrow">↗</span>
+                <span>✦</span>
+                <h3>{certificate}</h3>
               </div>
             ))}
           </div>
         </section>
 
         <section className="section contact-section" id="contact">
-          <div className="contact-panel">
-            <div>
-              <p className="eyebrow">LET'S CONNECT</p>
-              <h2>Have a project or opportunity in mind?</h2>
-              <p>
-                I would love to connect, learn and explore new opportunities.
-                Feel free to reach out.
-              </p>
-              <a
-                href="mailto:poojapatel53032@gmail.com"
-                className="primary-button"
-              >
-                Get In Touch <span>↗</span>
-              </a>
-            </div>
+          <p className="eyebrow">LET'S CONNECT</p>
+          <h2 className="section-title">
+            Get In <span>Touch</span>
+          </h2>
+          <p>
+            I am always open to connecting, learning, and exploring new
+            opportunities.
+          </p>
 
-            <div className="contact-details">
-              <a href="mailto:poojapatel53032@gmail.com">
-                <SocialIcon type="email" />
-                <span>
-                  <small>EMAIL</small>
-                  poojapatel53032@gmail.com
-                </span>
-              </a>
-              <a href="tel:+918652136933">
-                <span className="contact-symbol">☎</span>
-                <span>
-                  <small>PHONE</small>
-                  +91 8652136933
-                </span>
-              </a>
-              <div className="contact-location">
-                <span className="contact-symbol">⌖</span>
-                <span>
-                  <small>LOCATION</small>
-                  Bengaluru, Karnataka, India
-                </span>
-              </div>
-            </div>
+          <div className="contact-details">
+            <a href="mailto:poojapatel53032@gmail.com">
+              <span>✉</span>
+              poojapatel53032@gmail.com
+            </a>
+            <a href="tel:+918652136933">
+              <span>☎</span>
+              +91 8652136933
+            </a>
+            <p>
+              <span>⌖</span>
+              Bengaluru, Karnataka, India
+            </p>
+          </div>
+
+          <div className="contact-socials">
+            <a
+              href="https://github.com/PoojaPatelX13"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub ↗
+            </a>
+            <a
+              href="https://www.linkedin.com/in/pooja-patel-48666a386"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn ↗
+            </a>
+            <a href={RESUME_URL} target="_blank" rel="noreferrer">
+              Resume ↗
+            </a>
           </div>
         </section>
       </main>
 
       <footer className="footer">
-        <a className="brand" href="#home">
-          POOJA<span>.</span>
+        <a href="#home" className="logo">
+          Pooja<span>.</span>
         </a>
         <p>Designed & built by Pooja Patel</p>
-        <div className="footer-socials">
-          <a
-            href="https://github.com/PoojaPatelX13"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-          >
-            <SocialIcon type="github" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/pooja-patel-48666a386"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-          >
-            <SocialIcon type="linkedin" />
-          </a>
-          <a href="mailto:poojapatel53032@gmail.com" aria-label="Email">
-            <SocialIcon type="email" />
-          </a>
-        </div>
-        <span className="copyright">
-          © {new Date().getFullYear()} Pooja Patel. All rights reserved.
-        </span>
+        <p>© {new Date().getFullYear()} All rights reserved.</p>
       </footer>
     </div>
   );
