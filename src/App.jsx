@@ -10,8 +10,8 @@ const projects = [
     category: "MERN Stack",
     filter: "MERN Stack",
     title: "Book Basket",
-    description: "An online library management system developed using the MERN Stack.",
-    overview: "Allows users to explore books, view book details, add books to their personal library, and manage their reading status.",
+    description: "A full-stack online library management system developed using the MERN Stack.",
+    overview: "Enables users to search and explore books, view book information, add selected books to their personal library, and organise their reading progress through reading-status management.",
     technologies: ["MongoDB", "Express.js", "React.js", "Node.js"],
     link: "https://github.com/PoojaPatelX13/Book-Basket",
   },
@@ -20,8 +20,8 @@ const projects = [
     category: "Backend Development",
     filter: "Backend Development",
     title: "Destiny Travels",
-    description: "A REST API for managing travel destinations.",
-    overview: "Implements destination management with CRUD operations, filtering, sorting, and pagination using Express.js and MongoDB.",
+    description: "A RESTful API developed to manage travel destination data.",
+    overview: "Implements backend operations for creating, retrieving, updating, and deleting destination records, along with data filtering, sorting, and pagination using Express.js and MongoDB.",
     technologies: ["Node.js", "Express.js", "MongoDB", "Mongoose"],
     link: "https://github.com/PoojaPatelX13/Destiny-Travels",
   },
@@ -30,8 +30,8 @@ const projects = [
     category: "React Development",
     filter: "React Development",
     title: "Technika Courses",
-    description: "A course listing application built using React.",
-    overview: "Displays technical and programming courses with category-based filtering for easy course exploration.",
+    description: "A React-based application for exploring and filtering courses.",
+    overview: "Organises technical and programming courses into categories and provides interactive filtering to help users browse available learning options.",
     technologies: ["React.js", "JavaScript", "CSS", "HTML"],
     link: "https://github.com/PoojaPatelX13/Technika-Courses",
   },
@@ -40,8 +40,8 @@ const projects = [
     category: "React Development",
     filter: "React Development",
     title: "Cinescope",
-    description: "A movie browsing application built using React.",
-    overview: "Provides movie browsing, individual movie details, and a watchlist to help users keep track of movies.",
+    description: "A movie browsing application developed using React.",
+    overview: "Provides a user interface for exploring movies, viewing individual movie details, and maintaining a personal watchlist.",
     technologies: ["React.js", "JavaScript", "CSS", "HTML"],
     link: "https://github.com/PoojaPatelX13/Cinescope",
   },
@@ -50,8 +50,8 @@ const projects = [
     category: "Web Development",
     filter: "Web Development",
     title: "Foodie Card",
-    description: "A food-related web development project.",
-    overview: "A frontend project created to practise webpage structure, styling, and user interface development.",
+    description: "A frontend web development project focused on webpage design.",
+    overview: "Demonstrates the use of HTML, CSS, and JavaScript to structure and style webpage content and practise user interface development.",
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/PoojaPatelX13/Foodie-Card",
   },
@@ -60,8 +60,8 @@ const projects = [
     category: "Web Development",
     filter: "Web Development",
     title: "Bit Demo",
-    description: "A web development practice project.",
-    overview: "Created to practise frontend development concepts and build interactive webpage elements.",
+    description: "A frontend practice project developed using web technologies.",
+    overview: "Explores webpage structure, styling, and interactive elements while strengthening practical frontend development skills.",
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/PoojaPatelX13/Bit-Demo",
   },
@@ -70,8 +70,8 @@ const projects = [
     category: "JavaScript Project",
     filter: "JavaScript Project",
     title: "Type Rush",
-    description: "A typing practice application.",
-    overview: "A typing-focused project developed to practise JavaScript logic and interactive user interface features.",
+    description: "An interactive typing practice application.",
+    overview: "Focuses on interactive typing practice and JavaScript functionality, providing an opportunity to apply programming logic and frontend development concepts.",
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/PoojaPatelX13/Type-Rush-",
   },
@@ -80,8 +80,8 @@ const projects = [
     category: "Data Analytics",
     filter: "Data Analytics",
     title: "Sales & Revenue Dashboard",
-    description: "A dashboard project focused on sales and revenue analysis.",
-    overview: "Used Excel to organise sales data and present important business insights through dashboard visualisations.",
+    description: "An Excel dashboard designed to present sales and revenue information.",
+    overview: "Organised and analysed sales-related data using Microsoft Excel and presented key business information through dashboard visualisations.",
     technologies: ["Microsoft Excel", "Data Analysis", "Dashboards"],
     link: "https://github.com/PoojaPatelX13",
   },
@@ -90,8 +90,8 @@ const projects = [
     category: "Data Analytics",
     filter: "Data Analytics",
     title: "Customer Segmentation",
-    description: "A customer segmentation project using K-Means clustering.",
-    overview: "Applied customer segmentation techniques to group customers based on patterns in the available data.",
+    description: "A customer analysis project using K-Means clustering.",
+    overview: "Applied the K-Means clustering approach to explore customer data and group customers according to similarities and patterns in the dataset.",
     technologies: ["Python", "K-Means", "Data Analysis"],
     link: "https://github.com/PoojaPatelX13",
   },
@@ -100,8 +100,8 @@ const projects = [
     category: "Data Analytics",
     filter: "Data Analytics",
     title: "Predictive Analytics",
-    description: "A project exploring predictive analytics concepts.",
-    overview: "Worked with data analysis techniques to explore patterns and understand how data can support predictions.",
+    description: "A data analytics project exploring patterns and predictive techniques.",
+    overview: "Worked with data analysis concepts to examine patterns in datasets and understand how analytical methods can support data-driven predictions.",
     technologies: ["Python", "Data Analysis", "Excel"],
     link: "https://github.com/PoojaPatelX13",
   },
@@ -111,48 +111,48 @@ const skills = [
   {
     group: "Programming Languages",
     items: [
-      ["Python", "Used for programming, data analysis, and problem-solving."],
-      ["JavaScript", "Used to create interactive and dynamic web applications."],
+      ["Python", "Applied to programming tasks, data analysis, and logical problem-solving."],
+      ["JavaScript", "Used to develop interactive features and dynamic web applications."],
     ],
   },
   {
     group: "Frontend Development",
     items: [
-      ["HTML", "Builds the structure and content of web pages."],
-      ["CSS", "Styles web pages and creates responsive layouts."],
-      ["Bootstrap", "Helps build responsive layouts and interface components."],
-      ["React.js", "Used to develop component-based user interfaces."],
+      ["HTML", "Used to structure webpage content and build web interfaces."],
+      ["CSS", "Used to style webpages and create responsive layouts."],
+      ["Bootstrap", "Used to develop responsive layouts and reusable interface components."],
+      ["React.js", "Used to build component-based interfaces and interactive applications."],
     ],
   },
   {
     group: "Backend Development",
     items: [
-      ["Node.js", "Used to run JavaScript on the server side."],
-      ["Express.js", "Used to build backend applications and REST APIs."],
+      ["Node.js", "Used to develop server-side applications with JavaScript."],
+      ["Express.js", "Used to create backend applications and RESTful APIs."],
     ],
   },
   {
     group: "Databases",
     items: [
-      ["MySQL", "Used to store and manage structured data."],
-      ["MongoDB", "Used to store and manage application data in documents."],
+      ["MySQL", "Used to work with relational databases and structured information."],
+      ["MongoDB", "Used to store and manage application data in a document-based database."],
     ],
   },
   {
     group: "Data Analytics",
     items: [
-      ["Microsoft Excel", "Used for data organisation, analysis, and dashboards."],
-      ["Data Visualisation", "Presents information through visual formats and charts."],
-      ["Customer Segmentation", "Helps identify customer groups based on data patterns."],
+      ["Microsoft Excel", "Used for organising datasets, analysing information, and creating dashboards."],
+      ["Data Visualisation", "Used to communicate data insights through charts and visual representations."],
+      ["Customer Segmentation", "Used to explore customer groups based on similarities and data patterns."],
     ],
   },
   {
     group: "Tools",
     items: [
-      ["Git", "Used for tracking changes in project code."],
-      ["GitHub", "Used to host and manage software development projects."],
-      ["VS Code", "Used for writing and managing code."],
-      ["Postman", "Used for testing APIs and backend endpoints."],
+      ["Git", "Used for version control and tracking changes in project code."],
+      ["GitHub", "Used to host repositories and manage software development projects."],
+      ["VS Code", "Used as a development environment for writing and managing code."],
+      ["Postman", "Used to test REST APIs and verify backend endpoints."],
     ],
   },
 ];
@@ -163,9 +163,9 @@ const internships = [
     company: "Thiranex EduTech LLP",
     duration: "July 2026 – August 2026",
     points: [
-      "Cleaned, preprocessed, and structured raw datasets using Microsoft Excel.",
-      "Performed exploratory data analysis to examine datasets and identify patterns.",
-      "Worked on data analysis activities and Excel dashboard development.",
+      "Cleaned, preprocessed, and organised raw datasets using Microsoft Excel to improve data consistency and quality.",
+      "Performed exploratory data analysis (EDA) to examine datasets, identify patterns, and derive useful insights.",
+      "Worked on practical analytics assignments, including data analysis and Excel dashboard development.",
     ],
   },
   {
@@ -173,9 +173,9 @@ const internships = [
     company: "Thiranex EduTech LLP",
     duration: "July 2026 – August 2026",
     points: [
-      "Practised creating webpages using HTML, CSS, JavaScript, and Bootstrap.",
-      "Worked on webpage layouts and user interface improvements.",
-      "Practised testing webpage functionality and responsiveness.",
+      "Developed and practised webpage layouts using HTML, CSS, JavaScript, and Bootstrap.",
+      "Worked on frontend user interface improvements and responsive webpage design.",
+      "Tested webpage functionality and responsiveness to identify and correct interface issues.",
     ],
   },
 ];
@@ -211,63 +211,63 @@ const certifications = [
     title: "AI Fundamentals for Understanding AI",
     issuer: "IBM",
     date: "Issued February 2026",
-    description: "Developed foundational knowledge of Artificial Intelligence, including core concepts, applications, opportunities, and responsible considerations when using AI.",
+    description: "Introduced the foundational concepts of Artificial Intelligence, its capabilities, practical applications, and the role of AI in modern technology.",
   },
   {
     number: "02",
     title: "AI Fundamentals: Language and Vision in AI",
     issuer: "IBM",
     date: "Issued February 2026",
-    description: "Built a foundation in Artificial Intelligence, covering basic AI concepts, applications, capabilities, and the impact of AI across different industries.",
+    description: "Explored how Artificial Intelligence is applied to language and visual information, including the role of AI in understanding text and images.",
   },
   {
     number: "03",
     title: "Artificial Intelligence Fundamentals",
     issuer: "IBM",
     date: "Issued February 2026",
-    description: "Built a foundation in Artificial Intelligence, covering basic AI concepts, applications, capabilities, and the impact of AI across different industries.",
+    description: "Developed foundational knowledge of AI concepts, common applications, and the ways Artificial Intelligence is used across different fields.",
   },
   {
     number: "04",
     title: "Getting Started with AI",
     issuer: "IBM",
     date: "Issued February 2026",
-    description: "Developed a basic understanding of Artificial Intelligence, its key concepts, common applications, and how AI is used to solve real-world problems.",
+    description: "Gained an introductory understanding of Artificial Intelligence, its basic concepts, everyday applications, and its growing importance in the workplace.",
   },
   {
     number: "05",
     title: "Job Application Essential",
     issuer: "IBM",
     date: "Issued February 2026",
-    description: "Learned essential skills for preparing job applications, including resume preparation, job searching, professional communication, and interview readiness.",
+    description: "Covered essential career preparation skills, including preparing job applications, presenting qualifications, professional communication, and interview readiness.",
   },
   {
     number: "06",
     title: "Project Management Fundamentals",
     issuer: "IBM",
     date: "Issued February 2026",
-    description: "Learned the basic principles of project management, including project planning, organization, teamwork, time management, and completing projects effectively.",
+    description: "Developed an understanding of project management principles, including planning, organising tasks, managing time, collaborating with teams, and working towards project goals.",
   },
   {
     number: "07",
     title: "Getting Started with Generative AI",
     issuer: "IBM",
     date: "Issued July 2026",
-    description: "Learned the fundamentals of Generative AI, including how AI can generate text and other content, along with practical applications and responsible use of generative AI tools.",
+    description: "Explored Generative AI fundamentals, including how AI tools create content and how generative technologies can be applied in practical situations.",
   },
   {
     number: "08",
     title: "AI Literacy",
     issuer: "IBM",
     date: "Issued July 2026",
-    description: "Gained a foundational understanding of Artificial Intelligence, including key AI concepts, applications, and the role of AI in everyday life and the workplace.",
+    description: "Strengthened foundational AI awareness by learning about AI concepts, its real-world uses, and the importance of understanding AI in everyday and professional environments.",
   },
   {
     number: "09",
     title: "Getting Started with Cybersecurity",
-    issuer: "",
+    issuer: "IBM",
     date: "Issued October 31, 2026",
-    description: "Developed an understanding of cybersecurity fundamentals, common digital threats, online safety, and essential practices for protecting information and systems.",
+    description: "Developed an introductory understanding of cybersecurity, including common digital threats, online safety, and basic practices for protecting information and systems.",
   },
   {
     number: "10",
@@ -275,7 +275,7 @@ const certifications = [
     issuer: "Thiranex",
     date: "July–August 2026",
     credential: "THX-JUL0926-125",
-    description: "Designed and constructed responsive user interfaces using HTML, CSS, JavaScript, and Bootstrap. Optimized website layouts for multiple devices and cross-browser support, and tested and debugged front-end components to improve user experience.",
+    description: "Designed and developed responsive user interfaces using HTML, CSS, JavaScript, and Bootstrap. Worked on webpage layouts, cross-device compatibility, and testing and debugging frontend components to improve usability.",
   },
   {
     number: "11",
@@ -283,14 +283,14 @@ const certifications = [
     issuer: "Thiranex",
     date: "July–August 2026",
     credential: "THX-JUL0326-013",
-    description: "Cleaned, preprocessed, and structured raw datasets using Microsoft Excel to ensure data integrity. Performed exploratory data analysis (EDA) to examine datasets and identify useful patterns and insights.",
+    description: "Worked with raw datasets using Microsoft Excel for data cleaning, preprocessing, and organisation. Conducted exploratory data analysis (EDA) to examine information, identify patterns, and derive meaningful insights.",
   },
   {
     number: "12",
     title: "Letters of Recommendation – Data Analytics & Web Development",
     issuer: "Thiranex EduTech LLP",
     date: "November 2026",
-    description: "Received Letters of Recommendation in recognition of performance and contributions during Data Analytics and Web Development internships. Recognized for technical execution, problem-solving, analytical ability, clean implementation, punctual delivery, adaptability, dedication, and professional conduct.",
+    description: "Received Letters of Recommendation recognising contributions and performance during the Data Analytics and Web Development internships. The recommendations acknowledge technical execution, problem-solving, analytical ability, adaptability, dedication, timely delivery, and professional conduct.",
   },
 ];
 
@@ -361,9 +361,11 @@ function App() {
             <h2>BCA Student | MERN Stack Enthusiast | Data Analytics Enthusiast</h2>
 
             <p className="hero-description">
-              I am a motivated BCA student interested in web development and
-              data analytics. I enjoy learning new technologies and building
-              practical projects that improve my technical skills.
+              I am a BCA student with practical exposure to MERN Stack
+              development and Data Analytics. I enjoy building web applications,
+              working with data, and applying my technical knowledge to
+              practical projects. I am always eager to learn, improve, and take
+              on new challenges.
             </p>
 
             <div className="hero-buttons">
@@ -409,19 +411,23 @@ function App() {
             <div className="about-main">
               <h3>A little about my journey</h3>
               <p>
-                I am a Bachelor of Computer Applications (BCA) student at
-                Aditya Institute of Management Studies and Research, Bengaluru.
-                I am interested in developing web applications and exploring
+                I am pursuing a Bachelor of Computer Applications (BCA) at
+                Aditya Institute of Management Studies and Research, Bengaluru,
+                affiliated with Bengaluru City University. My academic journey
+                has helped me develop an interest in software development and
                 data analytics.
               </p>
               <p>
-                Through academic learning, internships, and personal projects,
-                I have gained practical exposure to programming, frontend and
-                backend development, databases, and data analysis.
+                I have gained practical experience through internships and
+                individual projects involving Python, JavaScript, React,
+                Node.js, Express.js, databases, and Microsoft Excel. These
+                experiences have helped me strengthen my programming,
+                analytical, and problem-solving skills.
               </p>
               <p>
-                My goal is to build a career in the IT industry and continue
-                developing my skills as a software developer.
+                I aspire to build a career as a Software Developer, continue
+                learning modern technologies, and contribute to meaningful
+                projects while growing as an IT professional.
               </p>
             </div>
 
@@ -451,7 +457,7 @@ function App() {
           <div className="section-heading">
             <span className="eyebrow">WHAT I WORK WITH</span>
             <h2>My Skills</h2>
-            <p>Technologies and tools I have learned and practised.</p>
+            <p>Technologies and tools I have learned and applied through coursework, internships, and projects.</p>
           </div>
 
           <div className="skills-grid">
@@ -476,6 +482,7 @@ function App() {
           <div className="section-heading">
             <span className="eyebrow">MY PROFESSIONAL JOURNEY</span>
             <h2>Internship Experience</h2>
+            <p>Practical learning and experience gained through industry-oriented internship assignments.</p>
           </div>
 
           <div className="experience-list">
@@ -504,7 +511,7 @@ function App() {
           <div className="section-heading">
             <span className="eyebrow">WHAT I'VE BUILT</span>
             <h2>My Projects</h2>
-            <p>Some of my academic, personal, and internship projects.</p>
+            <p>A selection of academic, personal, and internship projects showcasing my development and analytical skills.</p>
           </div>
 
           <div className="project-filters">
@@ -554,7 +561,7 @@ function App() {
           <div className="section-heading">
             <span className="eyebrow">MY ACADEMIC BACKGROUND</span>
             <h2>My Education</h2>
-            <p>My academic journey and educational qualifications.</p>
+            <p>My academic qualifications and educational journey.</p>
           </div>
 
           <div className="education-list">
@@ -581,8 +588,9 @@ function App() {
             <span className="eyebrow">LEARNING & ACHIEVEMENTS</span>
             <h2>Certificates & Recognition</h2>
             <p>
-              Certifications and internship recognition reflecting my
-              continuous learning and practical experience.
+              Professional learning certificates, internship credentials, and
+              recommendations reflecting my commitment to continuous learning
+              and practical development.
             </p>
           </div>
 
@@ -623,8 +631,9 @@ function App() {
             <span className="eyebrow">LET'S CONNECT</span>
             <h2>Get In Touch<span className="heading-dot">.</span></h2>
             <p>
-              Have an opportunity, a project idea, or just want to connect?
-              I'd love to hear from you. Let's start a conversation!
+              Interested in connecting, discussing a project, or sharing an
+              opportunity? Feel free to reach out. I would be happy to connect
+              and learn from new experiences.
             </p>
           </div>
 
