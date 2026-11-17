@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./App.css";
 
 const RESUME_URL =
-  "https://drive.google.com/file/d/1Ftm7jmsRFEaL324bzbhlc0WTUm671_4j/view?usp=drivesdk";
+  "https://drive.google.com/file/d/1nitZtYga8Duy-Ikg_mk9nbDyRmU4nb-G/view?usp=drivesdk";
 
 const projects = [
   {
@@ -100,7 +100,12 @@ const skillGroups = [
   },
   {
     title: "Data Analytics",
-    skills: ["Microsoft Excel", "Pivot Tables", "K-Means", "Data Visualization"],
+    skills: [
+      "Microsoft Excel",
+      "Pivot Tables",
+      "K-Means",
+      "Data Visualization",
+    ],
   },
   {
     title: "Tools",
@@ -139,19 +144,31 @@ function App() {
         </button>
 
         <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-          {["Home", "About", "Skills", "Experience", "Projects", "Education", "Contact"].map(
-            (item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={closeMenu}
-              >
-                {item}
-              </a>
-            )
-          )}
+          {[
+            "Home",
+            "About",
+            "Skills",
+            "Experience",
+            "Projects",
+            "Education",
+            "Contact",
+          ].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              onClick={closeMenu}
+            >
+              {item}
+            </a>
+          ))}
 
-          <a href={RESUME_URL} target="_blank" rel="noreferrer" aria-label="Resume">
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Resume"
+            className="resume-icon"
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
               <path d="M14 2v6h6M8 13h8M8 17h8" />
@@ -175,7 +192,9 @@ function App() {
             <h1>
               Pooja <span>Patel</span>
             </h1>
-            <h2>BCA Student | MERN Stack Enthusiast | Data Analytics Enthusiast</h2>
+            <h2>
+              BCA Student | MERN Stack Enthusiast | Data Analytics Enthusiast
+            </h2>
             <p className="hero-description">
               I am a motivated BCA student interested in building web
               applications and exploring data analytics. I enjoy learning new
@@ -216,7 +235,10 @@ function App() {
                 </svg>
               </a>
 
-              <a href="mailto:poojapatel53032@gmail.com" aria-label="Email">
+              <a
+                href="mailto:poojapatel53032@gmail.com"
+                aria-label="Email"
+              >
                 <svg viewBox="0 0 24 24">
                   <rect x="2" y="4" width="20" height="16" rx="2" />
                   <path d="m22 7-10 7L2 7" />
@@ -248,7 +270,9 @@ function App() {
               />
               <div className="image-placeholder">PP</div>
             </div>
-            <div className="floating-tag">Aspiring Software Developer</div>
+            <div className="floating-tag">
+              Aspiring Software Developer
+            </div>
           </div>
         </section>
 
@@ -276,6 +300,7 @@ function App() {
                 I am a hardworking, responsible, and quick learner who enjoys
                 improving my technical skills and taking on new challenges.
               </p>
+
               <a
                 href={RESUME_URL}
                 target="_blank"
@@ -342,9 +367,15 @@ function App() {
               <span>July – August 2026</span>
             </div>
             <ul>
-              <li>Worked on sales and revenue analysis using Microsoft Excel.</li>
-              <li>Practiced customer segmentation using K-Means clustering.</li>
-              <li>Explored predictive analytics and data interpretation.</li>
+              <li>
+                Worked on sales and revenue analysis using Microsoft Excel.
+              </li>
+              <li>
+                Practiced customer segmentation using K-Means clustering.
+              </li>
+              <li>
+                Explored predictive analytics and data interpretation.
+              </li>
             </ul>
           </div>
 
@@ -357,9 +388,14 @@ function App() {
               <span>July – August 2026</span>
             </div>
             <ul>
-              <li>Practiced creating web pages using HTML, CSS, JavaScript, and Bootstrap.</li>
+              <li>
+                Practiced creating web pages using HTML, CSS, JavaScript, and
+                Bootstrap.
+              </li>
               <li>Worked on webpage layouts and user interface improvements.</li>
-              <li>Practiced testing webpage functionality and responsiveness.</li>
+              <li>
+                Practiced testing webpage functionality and responsiveness.
+              </li>
             </ul>
           </div>
         </section>
@@ -378,7 +414,9 @@ function App() {
                 </div>
                 <p className="project-category">{project.category}</p>
                 <h3>{project.title}</h3>
-                <p className="project-description">{project.description}</p>
+                <p className="project-description">
+                  {project.description}
+                </p>
                 <div className="project-tech">
                   {project.tech.map((tech) => (
                     <span key={tech}>{tech}</span>
@@ -409,10 +447,12 @@ function App() {
             <p>Aditya Institute of Management Studies and Research</p>
             <p>Bengaluru City University, Bengaluru</p>
           </div>
+
           <div className="education-card">
             <h3>Pre-University Course (PUC)</h3>
             <p>Completed Higher Secondary Education</p>
           </div>
+
           <div className="education-card">
             <h3>SSLC</h3>
             <p>Completed Secondary School Education</p>
@@ -424,6 +464,7 @@ function App() {
           <h2 className="section-title">
             My <span>Certifications</span>
           </h2>
+
           <div className="certificates-grid">
             {certificates.map((certificate) => (
               <div className="certificate-card" key={certificate}>
