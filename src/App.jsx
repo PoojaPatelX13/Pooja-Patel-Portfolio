@@ -46,7 +46,7 @@ const personalInfo = {
   phone: "+91 8652136933",
   location: "Bengaluru, Karnataka, India",
   github: "https://github.com/PoojaPatelX13",
-  linkedin: "https://www.linkedin.com/in/pooja-patel-48666a386",
+  linkedin: "https://www.linkedin.com/in/poojapatelx13",
   profileImage: "/profile.jpg",
 };
 
