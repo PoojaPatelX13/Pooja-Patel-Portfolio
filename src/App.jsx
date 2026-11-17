@@ -1,380 +1,350 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 const RESUME_URL = "/PoojaPatelX13%20Resume.pdf";
 
 const projects = [
   {
-    number: "01",
-    category: "MERN Stack",
-    filter: "MERN Stack",
     title: "Book Basket",
-    description: "A full-stack online library management system developed using the MERN Stack.",
-    overview: "Enables users to search and explore books, view book information, add selected books to their personal library, and organise their reading progress through reading-status management.",
+    category: "MERN Stack",
+    description:
+      "An online library management system that allows users to search for books, view book details, add books to their personal library, and manage reading status.",
     technologies: ["MongoDB", "Express.js", "React.js", "Node.js"],
     link: "https://github.com/PoojaPatelX13/Book-Basket",
   },
   {
-    number: "02",
-    category: "Backend Development",
-    filter: "Backend Development",
     title: "Destiny Travels",
-    description: "A RESTful API developed to manage travel destination data.",
-    overview: "Implements backend operations for creating, retrieving, updating, and deleting destination records, along with data filtering, sorting, and pagination using Express.js and MongoDB.",
+    category: "Backend Development",
+    description:
+      "A RESTful API for managing travel destinations, featuring CRUD operations, database integration, filtering, sorting, and pagination.",
     technologies: ["Node.js", "Express.js", "MongoDB", "Mongoose"],
     link: "https://github.com/PoojaPatelX13/Destiny-Travels",
   },
   {
-    number: "03",
-    category: "React Development",
-    filter: "React Development",
     title: "Technika Courses",
-    description: "A React-based application for exploring and filtering courses.",
-    overview: "Organises technical and programming courses into categories and provides interactive filtering to help users browse available learning options.",
-    technologies: ["React.js", "JavaScript", "CSS", "HTML"],
+    category: "Frontend Development",
+    description:
+      "A React-based course listing application with course categories and interactive filters for browsing technical and programming courses.",
+    technologies: ["React.js", "JavaScript", "HTML", "CSS"],
     link: "https://github.com/PoojaPatelX13/Technika-Courses",
   },
   {
-    number: "04",
-    category: "React Development",
-    filter: "React Development",
     title: "Cinescope",
-    description: "A movie browsing application developed using React.",
-    overview: "Provides a user interface for exploring movies, viewing individual movie details, and maintaining a personal watchlist.",
-    technologies: ["React.js", "JavaScript", "CSS", "HTML"],
+    category: "Frontend Development",
+    description:
+      "A movie browsing application where users can explore movies, view movie details, and manage a personal watchlist.",
+    technologies: ["React.js", "JavaScript", "HTML", "CSS"],
     link: "https://github.com/PoojaPatelX13/Cinescope",
   },
   {
-    number: "05",
-    category: "Web Development",
-    filter: "Web Development",
     title: "Foodie Card",
-    description: "A frontend web development project focused on webpage design.",
-    overview: "Demonstrates the use of HTML, CSS, and JavaScript to structure and style webpage content and practise user interface development.",
+    category: "Web Development",
+    description:
+      "A frontend project focused on presenting food-related content through a structured and user-friendly card layout.",
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/PoojaPatelX13/Foodie-Card",
   },
   {
-    number: "06",
-    category: "Web Development",
-    filter: "Web Development",
     title: "Bit Demo",
-    description: "A frontend practice project developed using web technologies.",
-    overview: "Explores webpage structure, styling, and interactive elements while strengthening practical frontend development skills.",
+    category: "Web Development",
+    description:
+      "A web development practice project created to strengthen frontend development and implementation skills.",
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/PoojaPatelX13/Bit-Demo",
   },
   {
-    number: "07",
-    category: "JavaScript Project",
-    filter: "JavaScript Project",
     title: "Type Rush",
-    description: "An interactive typing practice application.",
-    overview: "Focuses on interactive typing practice and JavaScript functionality, providing an opportunity to apply programming logic and frontend development concepts.",
+    category: "Web Development",
+    description:
+      "A typing practice project designed to provide an interactive way to practise typing and improve speed.",
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/PoojaPatelX13/Type-Rush-",
   },
   {
-    number: "08",
-    category: "Data Analytics",
-    filter: "Data Analytics",
     title: "Sales & Revenue Dashboard",
-    description: "An Excel dashboard designed to present sales and revenue information.",
-    overview: "Organised and analysed sales-related data using Microsoft Excel and presented key business information through dashboard visualisations.",
-    technologies: ["Microsoft Excel", "Data Analysis", "Dashboards"],
-    link: "https://github.com/PoojaPatelX13",
+    category: "Data Analytics",
+    description:
+      "An Excel dashboard project focused on analysing sales and revenue data, organising information, and presenting insights through visual reports.",
+    technologies: ["Microsoft Excel", "Pivot Tables", "Data Visualization"],
+    link: "https://github.com/PoojaPatelX13/sales-revenue-analysis-dashboard",
   },
   {
-    number: "09",
-    category: "Data Analytics",
-    filter: "Data Analytics",
     title: "Customer Segmentation",
-    description: "A customer analysis project using K-Means clustering.",
-    overview: "Applied the K-Means clustering approach to explore customer data and group customers according to similarities and patterns in the dataset.",
-    technologies: ["Python", "K-Means", "Data Analysis"],
-    link: "https://github.com/PoojaPatelX13",
-  },
-  {
-    number: "10",
     category: "Data Analytics",
-    filter: "Data Analytics",
+    description:
+      "A customer segmentation project using K-Means clustering to group customers based on data patterns and support better business insights.",
+    technologies: ["Python", "K-Means", "Data Analytics"],
+    link: "https://github.com/PoojaPatelX13/customer-segmentation-project",
+  },
+  {
     title: "Predictive Analytics",
-    description: "A data analytics project exploring patterns and predictive techniques.",
-    overview: "Worked with data analysis concepts to examine patterns in datasets and understand how analytical methods can support data-driven predictions.",
-    technologies: ["Python", "Data Analysis", "Excel"],
-    link: "https://github.com/PoojaPatelX13",
+    category: "Data Analytics",
+    description:
+      "A data analytics project focused on exploring datasets, identifying patterns, and applying predictive analysis techniques.",
+    technologies: ["Python", "Data Analytics", "Data Analysis"],
+    link: "https://github.com/PoojaPatelX13/predictive-analytics-project",
   },
 ];
 
-const skills = [
+const skillGroups = [
   {
-    group: "Programming Languages",
-    items: [
-      ["Python", "Applied to programming tasks, data analysis, and logical problem-solving."],
-      ["JavaScript", "Used to develop interactive features and dynamic web applications."],
+    title: "Programming Languages",
+    skills: ["Python", "JavaScript"],
+  },
+  {
+    title: "Frontend Development",
+    skills: ["HTML", "CSS", "Bootstrap", "React.js"],
+  },
+  {
+    title: "Backend Development",
+    skills: ["Node.js", "Express.js"],
+  },
+  {
+    title: "Databases",
+    skills: ["MySQL", "MongoDB"],
+  },
+  {
+    title: "Data Analytics",
+    skills: [
+      "Microsoft Excel",
+      "Pivot Tables",
+      "Data Visualization",
+      "Customer Segmentation",
     ],
   },
   {
-    group: "Frontend Development",
-    items: [
-      ["HTML", "Used to structure webpage content and build web interfaces."],
-      ["CSS", "Used to style webpages and create responsive layouts."],
-      ["Bootstrap", "Used to develop responsive layouts and reusable interface components."],
-      ["React.js", "Used to build component-based interfaces and interactive applications."],
-    ],
-  },
-  {
-    group: "Backend Development",
-    items: [
-      ["Node.js", "Used to develop server-side applications with JavaScript."],
-      ["Express.js", "Used to create backend applications and RESTful APIs."],
-    ],
-  },
-  {
-    group: "Databases",
-    items: [
-      ["MySQL", "Used to work with relational databases and structured information."],
-      ["MongoDB", "Used to store and manage application data in a document-based database."],
-    ],
-  },
-  {
-    group: "Data Analytics",
-    items: [
-      ["Microsoft Excel", "Used for organising datasets, analysing information, and creating dashboards."],
-      ["Data Visualisation", "Used to communicate data insights through charts and visual representations."],
-      ["Customer Segmentation", "Used to explore customer groups based on similarities and data patterns."],
-    ],
-  },
-  {
-    group: "Tools",
-    items: [
-      ["Git", "Used for version control and tracking changes in project code."],
-      ["GitHub", "Used to host repositories and manage software development projects."],
-      ["VS Code", "Used as a development environment for writing and managing code."],
-      ["Postman", "Used to test REST APIs and verify backend endpoints."],
-    ],
+    title: "Tools & Technologies",
+    skills: ["Git", "GitHub", "VS Code", "Postman"],
   },
 ];
 
-const internships = [
+const experiences = [
   {
-    title: "Data Analytics Intern",
+    role: "Data Analytics Intern",
     company: "Thiranex EduTech LLP",
-    duration: "July 2026 – August 2026",
-    points: [
-      "Cleaned, preprocessed, and organised raw datasets using Microsoft Excel to improve data consistency and quality.",
-      "Performed exploratory data analysis (EDA) to examine datasets, identify patterns, and derive useful insights.",
-      "Worked on practical analytics assignments, including data analysis and Excel dashboard development.",
+    duration: "July – August 2026",
+    credential: "THX-JUL0326-013",
+    description: [
+      "Worked with datasets using Microsoft Excel for data cleaning, preprocessing, and organisation.",
+      "Practised exploratory data analysis to examine information and identify meaningful patterns.",
+      "Worked on analytics projects involving sales dashboards, customer segmentation, and predictive analytics.",
     ],
   },
   {
-    title: "Web Development Intern",
+    role: "Web Development Intern",
     company: "Thiranex EduTech LLP",
-    duration: "July 2026 – August 2026",
-    points: [
-      "Developed and practised webpage layouts using HTML, CSS, JavaScript, and Bootstrap.",
-      "Worked on frontend user interface improvements and responsive webpage design.",
-      "Tested webpage functionality and responsiveness to identify and correct interface issues.",
+    duration: "July – August 2026",
+    credential: "THX-JUL0926-125",
+    description: [
+      "Practised creating responsive web pages using HTML, CSS, JavaScript, and Bootstrap.",
+      "Worked on webpage layouts and user interface improvements.",
+      "Practised testing and debugging frontend components to improve usability and responsiveness.",
     ],
   },
 ];
 
 const education = [
   {
-    number: "01",
-    year: "2024 – 2027",
     degree: "Bachelor of Computer Applications (BCA)",
     institution: "Aditya Institute of Management Studies and Research",
-    university: "Bengaluru City University, Bengaluru",
-    result: "4th Semester SGPA: 8.02",
+    university: "Bengaluru City University",
+    duration: "2024 – 2027",
+    result: "SGPA: 8.02 (4th Semester)",
   },
   {
-    number: "02",
-    year: "2023",
     degree: "Pre-University Course (PUC)",
     institution: "CMR National PU College, Bengaluru",
-    result: "Percentage: 58%",
+    duration: "2022 – 2024",
+    result: "58%",
   },
   {
-    number: "03",
-    year: "2021",
     degree: "SSLC",
     institution: "Sri Basaveshwara English High School, Bengaluru",
-    result: "Percentage: 85%",
+    duration: "2021 – 2022",
+    result: "85%",
   },
 ];
 
 const certifications = [
   {
-    number: "01",
     title: "AI Fundamentals for Understanding AI",
     issuer: "IBM",
-    date: "Issued February 2026",
-    description: "Introduced the foundational concepts of Artificial Intelligence, its capabilities, practical applications, and the role of AI in modern technology.",
+    date: "February 2026",
   },
   {
-    number: "02",
     title: "AI Fundamentals: Language and Vision in AI",
     issuer: "IBM",
-    date: "Issued February 2026",
-    description: "Explored how Artificial Intelligence is applied to language and visual information, including the role of AI in understanding text and images.",
+    date: "February 2026",
   },
   {
-    number: "03",
     title: "Artificial Intelligence Fundamentals",
     issuer: "IBM",
-    date: "Issued February 2026",
-    description: "Developed foundational knowledge of AI concepts, common applications, and the ways Artificial Intelligence is used across different fields.",
+    date: "February 2026",
   },
   {
-    number: "04",
     title: "Getting Started with AI",
     issuer: "IBM",
-    date: "Issued February 2026",
-    description: "Gained an introductory understanding of Artificial Intelligence, its basic concepts, everyday applications, and its growing importance in the workplace.",
+    date: "February 2026",
   },
   {
-    number: "05",
-    title: "Job Application Essential",
+    title: "Job Application Essentials",
     issuer: "IBM",
-    date: "Issued February 2026",
-    description: "Covered essential career preparation skills, including preparing job applications, presenting qualifications, professional communication, and interview readiness.",
+    date: "February 2026",
   },
   {
-    number: "06",
     title: "Project Management Fundamentals",
     issuer: "IBM",
-    date: "Issued February 2026",
-    description: "Developed an understanding of project management principles, including planning, organising tasks, managing time, collaborating with teams, and working towards project goals.",
+    date: "February 2026",
   },
   {
-    number: "07",
     title: "Getting Started with Generative AI",
     issuer: "IBM",
-    date: "Issued July 2026",
-    description: "Explored Generative AI fundamentals, including how AI tools create content and how generative technologies can be applied in practical situations.",
+    date: "July 2026",
   },
   {
-    number: "08",
     title: "AI Literacy",
     issuer: "IBM",
-    date: "Issued July 2026",
-    description: "Strengthened foundational AI awareness by learning about AI concepts, its real-world uses, and the importance of understanding AI in everyday and professional environments.",
+    date: "July 2026",
   },
   {
-    number: "09",
     title: "Getting Started with Cybersecurity",
     issuer: "IBM",
-    date: "Issued October 31, 2026",
-    description: "Developed an introductory understanding of cybersecurity, including common digital threats, online safety, and basic practices for protecting information and systems.",
+    date: "October 31, 2026",
   },
   {
-    number: "10",
     title: "Web Development Intern",
-    issuer: "Thiranex",
-    date: "July–August 2026",
+    issuer: "Thiranex EduTech LLP",
+    date: "July – August 2026",
     credential: "THX-JUL0926-125",
-    description: "Designed and developed responsive user interfaces using HTML, CSS, JavaScript, and Bootstrap. Worked on webpage layouts, cross-device compatibility, and testing and debugging frontend components to improve usability.",
+    description:
+      "Completed practical work in frontend development using HTML, CSS, JavaScript, and Bootstrap, including responsive layouts and interface testing.",
   },
   {
-    number: "11",
     title: "Data Analytics Intern",
-    issuer: "Thiranex",
-    date: "July–August 2026",
+    issuer: "Thiranex EduTech LLP",
+    date: "July – August 2026",
     credential: "THX-JUL0326-013",
-    description: "Worked with raw datasets using Microsoft Excel for data cleaning, preprocessing, and organisation. Conducted exploratory data analysis (EDA) to examine information, identify patterns, and derive meaningful insights.",
+    description:
+      "Worked with datasets, Excel-based data cleaning, preprocessing, exploratory analysis, and identifying meaningful insights.",
   },
   {
-    number: "12",
     title: "Letters of Recommendation – Data Analytics & Web Development",
     issuer: "Thiranex EduTech LLP",
     date: "November 2026",
-    description: "Received Letters of Recommendation recognising contributions and performance during the Data Analytics and Web Development internships. The recommendations acknowledge technical execution, problem-solving, analytical ability, adaptability, dedication, timely delivery, and professional conduct.",
+    description:
+      "Recognition for contributions during both internships, highlighting technical execution, analytical ability, problem-solving, adaptability, dedication, and professional conduct.",
   },
 ];
 
 const filters = [
   "All",
   "MERN Stack",
-  "React Development",
   "Backend Development",
+  "Frontend Development",
   "Web Development",
-  "JavaScript Project",
   "Data Analytics",
 ];
 
 function App() {
-  const [theme, setTheme] = useState("dark");
   const [activeFilter, setActiveFilter] = useState("All");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      darkMode ? "dark" : "light"
+    );
+  }, [darkMode]);
 
   const filteredProjects =
     activeFilter === "All"
       ? projects
-      : projects.filter((project) => project.filter === activeFilter);
-
-  const toggleTheme = () => {
-    setTheme((current) => (current === "dark" ? "light" : "dark"));
-  };
+      : projects.filter((project) => project.category === activeFilter);
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className={`app ${theme === "light" ? "light-theme" : ""}`}>
+    <div className={`portfolio ${darkMode ? "dark-mode" : "light-mode"}`}>
       <header className="navbar">
-        <a href="#home" className="brand" onClick={closeMenu}>
+        <a href="#home" className="logo" onClick={closeMenu}>
           POOJA PATEL<span>.</span>
         </a>
 
-        <button
-          className="menu-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation"
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? "✕" : "☰"}
-        </button>
-
-        <nav className={`nav-links ${menuOpen ? "show-menu" : ""}`}>
-          <a href="#home" onClick={closeMenu}>Home</a>
-          <a href="#about" onClick={closeMenu}>About</a>
-          <a href="#skills" onClick={closeMenu}>Skills</a>
-          <a href="#experience" onClick={closeMenu}>Experience</a>
-          <a href="#projects" onClick={closeMenu}>Projects</a>
-          <a href="#education" onClick={closeMenu}>Education</a>
-          <a href="#certifications" onClick={closeMenu}>Certificates</a>
-          <a href="#contact" onClick={closeMenu}>Contact</a>
+        <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
+          {[
+            "Home",
+            "About",
+            "Skills",
+            "Experience",
+            "Projects",
+            "Education",
+            "Certifications",
+            "Contact",
+          ].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              onClick={closeMenu}
+            >
+              {item}
+            </a>
+          ))}
         </nav>
 
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {theme === "dark" ? "☀ Light" : "☾ Dark"}
-        </button>
+        <div className="nav-actions">
+          <button
+            className="theme-toggle"
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle theme"
+            type="button"
+          >
+            {darkMode ? "☀" : "☾"}
+          </button>
+
+          <button
+            className="menu-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation"
+            type="button"
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
+        </div>
       </header>
 
       <main>
-        {/* HERO */}
         <section className="hero section" id="home">
           <div className="hero-content">
-            <span className="eyebrow">HELLO, I'M</span>
-            <h1>POOJA PATEL<span>.</span></h1>
+            <p className="availability">
+              <span className="availability-dot"></span>
+              Open to learning and opportunities
+            </p>
+
+            <p className="section-label">HELLO, I'M</p>
+            <h1>
+              POOJA <span>PATEL</span>
+            </h1>
+
             <h2>BCA Student | MERN Stack Enthusiast | Data Analytics Enthusiast</h2>
 
             <p className="hero-description">
-              I am a BCA student with practical exposure to MERN Stack
-              development and Data Analytics. I enjoy building web applications,
-              working with data, and applying my technical knowledge to
-              practical projects. I am always eager to learn, improve, and take
-              on new challenges.
+              I am a BCA student aspiring to become a Software Developer,
+              with practical exposure to MERN Stack development and Data
+              Analytics. I enjoy building web applications, analysing data,
+              and applying my technical knowledge to real-world projects.
+              I am committed to continuous learning and improving my
+              technical and problem-solving skills.
             </p>
 
             <div className="hero-buttons">
-              <a className="primary-button" href="#projects">
+              <a href="#projects" className="primary-button">
                 Explore My Work
               </a>
               <a
-                className="secondary-button"
                 href={RESUME_URL}
+                className="secondary-button"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -382,143 +352,118 @@ function App() {
               </a>
             </div>
 
-            <div className="social-links">
-              <a href="https://github.com/PoojaPatelX13" target="_blank" rel="noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/pooja-patel-48666a386" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a href="mailto:poojapatel53032@gmail.com">Email</a>
+            <div className="social-icons">
+              <a
+                href="https://github.com/PoojaPatelX13"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                GH
+              </a>
+              <a
+                href="https://www.linkedin.com/in/pooja-patel-48666a386"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
+                in
+              </a>
+              <a href="mailto:poojapatel53032@gmail.com" aria-label="Email">
+                ✉
+              </a>
             </div>
           </div>
 
-          <div className="hero-image-area">
-            <div className="hero-image-frame">
-              <img src="/profile.jpg" alt="Pooja Patel" className="profile-image" />
-            </div>
-            <div className="floating-card">
-              <span className="status-dot"></span>
-              Open to Learning & Opportunities
-            </div>
-          </div>
-        </section>
-
-        {/* ABOUT */}
-        <section className="section" id="about">
-          <div className="section-heading">
-            <span className="eyebrow">GET TO KNOW ME</span>
-            <h2>About Me</h2>
-          </div>
-
-          <div className="about-grid">
-            <div className="about-main">
-              <h3>A little about my journey</h3>
-              <p>
-                I am pursuing a Bachelor of Computer Applications (BCA) at
-                Aditya Institute of Management Studies and Research, Bengaluru,
-                affiliated with Bengaluru City University. My academic journey
-                has helped me develop an interest in software development and
-                data analytics.
-              </p>
-              <p>
-                I have gained practical experience through internships and
-                individual projects involving Python, JavaScript, React,
-                Node.js, Express.js, databases, and Microsoft Excel. These
-                experiences have helped me strengthen my programming,
-                analytical, and problem-solving skills.
-              </p>
-              <p>
-                I aspire to build a career as a Software Developer, continue
-                learning modern technologies, and contribute to meaningful
-                projects while growing as an IT professional.
-              </p>
-            </div>
-
-            <div className="about-details">
-              <div className="detail-card">
-                <span>Location</span>
-                <strong>Bengaluru, Karnataka</strong>
-              </div>
-              <div className="detail-card">
-                <span>Degree</span>
-                <strong>Bachelor of Computer Applications</strong>
-              </div>
-              <div className="detail-card">
-                <span>University</span>
-                <strong>Bengaluru City University</strong>
-              </div>
-              <div className="detail-card">
-                <span>Career Goal</span>
-                <strong>Software Developer</strong>
-              </div>
-            </div>
+          <div className="hero-image">
+            <img
+              src="/profile.jpg"
+              alt="Pooja Patel"
+              className="profile-photo"
+            />
           </div>
         </section>
 
-        {/* SKILLS */}
+        <section className="section about-section" id="about">
+          <p className="section-label">GET TO KNOW ME</p>
+          <h2 className="section-title">About Me</h2>
+
+          <div className="about-content">
+            <p>
+              I am pursuing a Bachelor of Computer Applications (BCA) at
+              Aditya Institute of Management Studies and Research,
+              Bengaluru City University. I have developed practical
+              experience through academic projects and internships in
+              MERN Stack development, web development, and Data Analytics.
+            </p>
+            <p>
+              I enjoy learning new technologies, creating useful web
+              applications, and working with data to discover meaningful
+              insights. My goal is to grow as a Software Developer while
+              continuously strengthening my technical and problem-solving
+              abilities.
+            </p>
+          </div>
+        </section>
+
         <section className="section" id="skills">
-          <div className="section-heading">
-            <span className="eyebrow">WHAT I WORK WITH</span>
-            <h2>My Skills</h2>
-            <p>Technologies and tools I have learned and applied through coursework, internships, and projects.</p>
-          </div>
+          <p className="section-label">WHAT I WORK WITH</p>
+          <h2 className="section-title">My Skills</h2>
 
           <div className="skills-grid">
-            {skills.map((group) => (
-              <div className="skill-card" key={group.group}>
-                <h3>{group.group}</h3>
-                <div className="skill-list">
-                  {group.items.map(([name, description]) => (
-                    <div className="skill-info" key={name}>
-                      <strong>{name}</strong>
-                      <p>{description}</p>
-                    </div>
+            {skillGroups.map((group) => (
+              <article className="skill-card" key={group.title}>
+                <h3>{group.title}</h3>
+                <div className="skill-tags">
+                  {group.skills.map((skill) => (
+                    <span className="skill-tag" key={skill}>
+                      {skill}
+                    </span>
                   ))}
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* EXPERIENCE */}
-        <section className="section" id="experience">
-          <div className="section-heading">
-            <span className="eyebrow">MY PROFESSIONAL JOURNEY</span>
-            <h2>Internship Experience</h2>
-            <p>Practical learning and experience gained through industry-oriented internship assignments.</p>
-          </div>
-
-          <div className="experience-list">
-            {internships.map((internship) => (
-              <article className="experience-card" key={internship.title}>
-                <div className="experience-top">
-                  <div>
-                    <h3>{internship.title}</h3>
-                    <p className="company-name">{internship.company}</p>
-                  </div>
-                  <span className="experience-date">{internship.duration}</span>
-                </div>
-
-                <ul>
-                  {internship.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
               </article>
             ))}
           </div>
         </section>
 
-        {/* PROJECTS */}
-        <section className="section" id="projects">
-          <div className="section-heading">
-            <span className="eyebrow">WHAT I'VE BUILT</span>
-            <h2>My Projects</h2>
-            <p>A selection of academic, personal, and internship projects showcasing my development and analytical skills.</p>
+        <section className="section" id="experience">
+          <p className="section-label">MY PROFESSIONAL JOURNEY</p>
+          <h2 className="section-title">Internship Experience</h2>
+
+          <div className="experience-grid">
+            {experiences.map((experience) => (
+              <article className="experience-card" key={experience.credential}>
+                <p className="experience-date">{experience.duration}</p>
+                <h3>{experience.role}</h3>
+                <h4>{experience.company}</h4>
+                <ul>
+                  {experience.description.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+                <p className="credential">
+                  Credential ID: {experience.credential}
+                </p>
+              </article>
+            ))}
           </div>
+        </section>
+
+        <section className="section" id="projects">
+          <p className="section-label">SELECTED WORK</p>
+          <h2 className="section-title">My Projects</h2>
+          <p className="section-description">
+            A collection of my academic, development, and data analytics
+            projects.
+          </p>
 
           <div className="project-filters">
             {filters.map((filter) => (
               <button
                 key={filter}
-                className={activeFilter === filter ? "filter-button active" : "filter-button"}
+                type="button"
+                className={`filter-button ${activeFilter === filter ? "active" : ""
+                  }`}
                 onClick={() => setActiveFilter(filter)}
               >
                 {filter}
@@ -526,160 +471,128 @@ function App() {
             ))}
           </div>
 
-          <div className="projects-grid">
+          <div className="project-grid">
             {filteredProjects.map((project) => (
-              <article className="project-card" key={project.number}>
-                <div className="project-topline">
-                  <span>{project.category}</span>
-                  <span className="project-number">{project.number}</span>
+              <article className="project-card" key={project.title}>
+                <p className="project-category">{project.category}</p>
+                <h3>{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+
+                <div className="project-technologies">
+                  {project.technologies.map((technology) => (
+                    <span key={technology}>{technology}</span>
+                  ))}
                 </div>
 
-                <div className="project-content">
-                  <h3>{project.title}</h3>
-                  <p className="project-description">{project.description}</p>
-
-                  <h4>Project Overview</h4>
-                  <p>{project.overview}</p>
-
-                  <div className="tech-tags">
-                    {project.technologies.map((technology) => (
-                      <span key={technology}>{technology}</span>
-                    ))}
-                  </div>
-
-                  <a className="project-link" href={project.link} target="_blank" rel="noreferrer">
-                    View on GitHub ↗
-                  </a>
-                </div>
+                <a
+                  href={project.link}
+                  className="project-link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View GitHub Repository ↗
+                </a>
               </article>
             ))}
           </div>
         </section>
 
-        {/* EDUCATION */}
         <section className="section" id="education">
-          <div className="section-heading">
-            <span className="eyebrow">MY ACADEMIC BACKGROUND</span>
-            <h2>My Education</h2>
-            <p>My academic qualifications and educational journey.</p>
-          </div>
+          <p className="section-label">MY ACADEMIC BACKGROUND</p>
+          <h2 className="section-title">Education</h2>
 
-          <div className="education-list">
+          <div className="education-grid">
             {education.map((item) => (
-              <article className="education-card" key={item.number}>
-                <div className="education-number">{item.number}</div>
-                <div className="education-content">
-                  <span className="education-year">{item.year}</span>
-                  <h3>{item.degree}</h3>
-                  <p className="education-institution">{item.institution}</p>
-                  {item.university && (
-                    <p className="education-university">{item.university}</p>
-                  )}
-                  <div className="education-result">{item.result}</div>
-                </div>
+              <article className="education-card" key={item.degree}>
+                <p className="education-date">{item.duration}</p>
+                <h3>{item.degree}</h3>
+                <h4>{item.institution}</h4>
+                {item.university && <p>{item.university}</p>}
+                <p className="education-result">{item.result}</p>
               </article>
             ))}
           </div>
         </section>
 
-        {/* CERTIFICATES */}
         <section className="section" id="certifications">
-          <div className="section-heading">
-            <span className="eyebrow">LEARNING & ACHIEVEMENTS</span>
-            <h2>Certificates & Recognition</h2>
-            <p>
-              Professional learning certificates, internship credentials, and
-              recommendations reflecting my commitment to continuous learning
-              and practical development.
-            </p>
-          </div>
+          <p className="section-label">CONTINUOUS LEARNING</p>
+          <h2 className="section-title">Certifications & Recognition</h2>
 
-          <div className="certifications-grid">
+          <div className="certification-grid">
             {certifications.map((certificate) => (
-              <article className="certificate-card" key={certificate.number}>
-                <div className="certificate-top">
-                  <span className="certificate-star">✦</span>
-                  <span className="certificate-number">{certificate.number}</span>
-                </div>
-
+              <article className="certification-card" key={certificate.title}>
+                <div className="certificate-icon">✦</div>
                 <h3>{certificate.title}</h3>
-
-                {(certificate.issuer || certificate.date) && (
-                  <p className="certificate-meta">
-                    {certificate.issuer}
-                    {certificate.issuer && certificate.date ? " | " : ""}
-                    {certificate.date}
-                  </p>
-                )}
-
+                <p>{certificate.issuer}</p>
+                <p className="certificate-date">
+                  Issued {certificate.date}
+                </p>
                 {certificate.credential && (
-                  <p className="credential-id">
+                  <p className="credential">
                     Credential ID: {certificate.credential}
                   </p>
                 )}
-
-                <h4>Certificate Overview</h4>
-                <p className="certificate-description">{certificate.description}</p>
+                {certificate.description && (
+                  <p className="certificate-description">
+                    {certificate.description}
+                  </p>
+                )}
               </article>
             ))}
           </div>
         </section>
 
-        {/* CONTACT */}
-        <section className="section contact-section" id="contact">
-          <div className="section-heading">
-            <span className="eyebrow">LET'S CONNECT</span>
-            <h2>Get In Touch<span className="heading-dot">.</span></h2>
-            <p>
-              Interested in connecting, discussing a project, or sharing an
-              opportunity? Feel free to reach out. I would be happy to connect
-              and learn from new experiences.
-            </p>
-          </div>
+        <section className="section contact" id="contact">
+          <p className="section-label">LET'S CONNECT</p>
+          <h2 className="section-title">Get In Touch</h2>
+          <p className="section-description">
+            I am always interested in learning, connecting, and exploring
+            opportunities. Feel free to reach out.
+          </p>
 
-          <div className="contact-panel">
-            <a className="contact-item" href="mailto:poojapatel53032@gmail.com">
+          <div className="contact-grid">
+            <a href="mailto:poojapatel53032@gmail.com" className="contact-card">
               <span className="contact-icon">✉</span>
-              <span className="contact-text">
-                <small>Email Me</small>
-                <strong>poojapatel53032@gmail.com</strong>
+              <span>
+                <strong>Email</strong>
+                <small>poojapatel53032@gmail.com</small>
               </span>
               <span className="contact-arrow">↗</span>
             </a>
 
-            <a className="contact-item" href="tel:+918652136933">
+            <a href="tel:+918652136933" className="contact-card">
               <span className="contact-icon">☎</span>
-              <span className="contact-text">
-                <small>Call Me</small>
-                <strong>+91 8652136933</strong>
+              <span>
+                <strong>Phone</strong>
+                <small>+91 8652136933</small>
               </span>
               <span className="contact-arrow">↗</span>
             </a>
 
             <a
-              className="contact-item"
               href="https://www.linkedin.com/in/pooja-patel-48666a386"
               target="_blank"
               rel="noreferrer"
+              className="contact-card"
             >
-              <span className="contact-icon linkedin-icon">in</span>
-              <span className="contact-text">
-                <small>Connect on LinkedIn</small>
-                <strong>linkedin.com/in/pooja-patel-48666a386</strong>
+              <span className="contact-icon">in</span>
+              <span>
+                <strong>LinkedIn</strong>
+                <small>Connect with me</small>
               </span>
               <span className="contact-arrow">↗</span>
             </a>
 
             <a
-              className="contact-item"
               href="https://github.com/PoojaPatelX13"
               target="_blank"
               rel="noreferrer"
+              className="contact-card"
             >
-              <span className="contact-icon github-icon">⌘</span>
-              <span className="contact-text">
-                <small>Explore My GitHub</small>
-                <strong>github.com/PoojaPatelX13</strong>
+              <span className="contact-icon">⌘</span>
+              <span>
+                <strong>GitHub</strong>
+                <small>Explore my repositories</small>
               </span>
               <span className="contact-arrow">↗</span>
             </a>
@@ -687,38 +600,34 @@ function App() {
         </section>
       </main>
 
-      {/* FOOTER */}
       <footer className="footer">
-        <a href="#home" className="footer-brand">
+        <a href="#home" className="footer-logo">
           POOJA PATEL<span>.</span>
         </a>
-
-        <p className="footer-tagline">
-          Building my skills, one project at a time.
-        </p>
+        <p>Building my skills, one project at a time.</p>
 
         <div className="footer-socials">
-          <a href="https://github.com/PoojaPatelX13" target="_blank" rel="noreferrer">
-            GitHub ↗
+          <a
+            href="https://github.com/PoojaPatelX13"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
           </a>
           <a
             href="https://www.linkedin.com/in/pooja-patel-48666a386"
             target="_blank"
             rel="noreferrer"
           >
-            LinkedIn ↗
+            LinkedIn
           </a>
-          <a href="mailto:poojapatel53032@gmail.com">Email ↗</a>
+          <a href="mailto:poojapatel53032@gmail.com">Email</a>
         </div>
 
-        <div className="footer-divider"></div>
-
-        <p className="footer-copyright">
-          Designed & developed by <strong>Pooja Patel</strong>.
-        </p>
-        <p className="footer-copyright">
-          © {new Date().getFullYear()} Pooja Patel. All rights reserved.
-        </p>
+        <div className="footer-bottom">
+          <p>© {new Date().getFullYear()} Pooja Patel. All rights reserved.</p>
+          <p>Designed & developed by Pooja Patel</p>
+        </div>
       </footer>
     </div>
   );
