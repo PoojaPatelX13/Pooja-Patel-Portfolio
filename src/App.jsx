@@ -27,15 +27,17 @@ import {
   FaLightbulb,
   FaProjectDiagram,
   FaFilePdf,
+  FaBookOpen,
+  FaUniversity,
+  FaCalendarAlt,
+  FaStar,
 } from "react-icons/fa";
 
 import "./App.css";
 
 const RESUME_URL = "/PoojaPatelX13%20Resume.pdf";
 
-// ========================================
 // PERSONAL INFORMATION
-// ========================================
 
 const personalInfo = {
   name: "POOJA PATEL",
@@ -50,9 +52,7 @@ const personalInfo = {
   profileImage: "/profile.jpg",
 };
 
-// ========================================
 // NAVIGATION
-// ========================================
 
 const navigation = [
   { name: "Home", link: "#home" },
@@ -65,9 +65,7 @@ const navigation = [
   { name: "Contact", link: "#contact" },
 ];
 
-// ========================================
 // HIGHLIGHTS
-// ========================================
 
 const highlights = [
   {
@@ -96,9 +94,7 @@ const highlights = [
   },
 ];
 
-// ========================================
 // SKILLS
-// ========================================
 
 const skillGroups = [
   {
@@ -149,9 +145,7 @@ const skillGroups = [
   },
 ];
 
-// ========================================
 // INTERNSHIPS
-// ========================================
 
 const internships = [
   {
@@ -182,9 +176,7 @@ const internships = [
   },
 ];
 
-// ========================================
 // PROJECTS
-// ========================================
 
 const projects = [
   {
@@ -331,41 +323,48 @@ const projectFilters = [
   "Data Analytics",
 ];
 
-// ========================================
 // EDUCATION
-// ========================================
 
 const education = [
   {
     degree: "Bachelor of Computer Applications (BCA)",
+    shortDegree: "Undergraduate Degree",
     institution:
       "Aditya Institute of Management Studies and Research",
     university: "Bengaluru City University",
     duration: "2024 – 2027",
-    details: "Currently pursuing BCA.",
+    status: "Currently Pursuing",
+    details: [
+      "Learning programming languages such as Python and JavaScript.",
+      "Studying web development and MERN Stack technologies.",
+      "Gaining knowledge of database management using SQL and MongoDB.",
+      "Working on practical projects and technical assignments.",
+      "Developing problem-solving and analytical skills.",
+    ],
     result: "4th Semester SGPA: 8.02",
+    icon: <FaGraduationCap />,
+    featured: true,
   },
   {
     degree: "Pre-University Course (PUC)",
+    shortDegree: "Higher Secondary Education",
     institution: "CMR National PU College",
-    university: "Bengaluru",
-    duration: "2023",
-    details: "Completed Pre-University education.",
+    university: "Karnataka Pre-University Education Board",
+    duration: "2022 – 2024",
+    status: "Completed",
+    details: [
+      "Completed Pre-University education.",
+      "Built a foundation in academic and analytical learning.",
+      "Developed communication and problem-solving skills.",
+      "Gained an interest in computers and technology.",
+    ],
     result: "58%",
-  },
-  {
-    degree: "SSLC",
-    institution: "Sri Basaveshwara English High School",
-    university: "Bengaluru",
-    duration: "2021",
-    details: "Completed secondary school education.",
-    result: "85%",
+    icon: <FaBookOpen />,
+    featured: false,
   },
 ];
 
-// ========================================
 // CERTIFICATES
-// ========================================
 
 const certificates = [
   {
@@ -456,9 +455,7 @@ const certificates = [
   },
 ];
 
-// ========================================
 // LANGUAGES
-// ========================================
 
 const languages = [
   "English",
@@ -467,9 +464,7 @@ const languages = [
   "Rajasthani",
 ];
 
-// ========================================
 // PROFESSIONAL INTERESTS
-// ========================================
 
 const interests = [
   {
@@ -510,9 +505,7 @@ const interests = [
   },
 ];
 
-// ========================================
 // REUSABLE SECTION HEADING
-// ========================================
 
 function SectionHeading({ label, title, description }) {
   return (
@@ -524,9 +517,7 @@ function SectionHeading({ label, title, description }) {
   );
 }
 
-// ========================================
 // MAIN APP
-// ========================================
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -572,8 +563,6 @@ function App() {
               </a>
             ))}
 
-            {/* RESUME PDF LOGO */}
-
             <a
               href={RESUME_URL}
               target="_blank"
@@ -613,9 +602,7 @@ function App() {
         <section className="hero-section" id="home">
           <div className="hero-container">
             <div className="hero-content">
-              <span className="hero-greeting">
-                Hello, I'm
-              </span>
+              <span className="hero-greeting">Hello, I'm</span>
 
               <h1>
                 {personalInfo.name}
@@ -629,10 +616,12 @@ function App() {
               </p>
 
               <p className="hero-description">
-                Motivated BCA student with practical exposure to
-                programming, MERN Stack development and Data Analytics.
-                Interested in building useful applications, learning
-                new technologies and growing as a software developer.
+                Motivated BCA student with knowledge of Python,
+                JavaScript, MERN Stack and Data Analytics.
+                Experienced in building practical projects and
+                developing web applications. Passionate about
+                learning new technologies and growing as a Software
+                Developer.
               </p>
 
               <div className="hero-buttons">
@@ -670,8 +659,6 @@ function App() {
                 >
                   <FaEnvelope />
                 </a>
-
-                {/* RESUME PDF ICON AFTER EMAIL */}
 
                 <a
                   href={RESUME_URL}
@@ -716,10 +703,7 @@ function App() {
             <div className="highlights-grid">
               {highlights.map((item) => (
                 <div className="highlight-card" key={item.title}>
-                  <div className="highlight-icon">
-                    {item.icon}
-                  </div>
-
+                  <div className="highlight-icon">{item.icon}</div>
                   <h3>{item.number}</h3>
                   <h4>{item.title}</h4>
                   <p>{item.description}</p>
@@ -827,10 +811,7 @@ function App() {
             <div className="skills-grid">
               {skillGroups.map((group) => (
                 <div className="skill-card" key={group.title}>
-                  <div className="skill-icon">
-                    {group.icon}
-                  </div>
-
+                  <div className="skill-icon">{group.icon}</div>
                   <h3>{group.title}</h3>
                   <p>{group.description}</p>
 
@@ -873,7 +854,6 @@ function App() {
 
                   <h3>{internship.role}</h3>
                   <h4>{internship.company}</h4>
-
                   <p>{internship.description}</p>
 
                   <h5>Key Learning</h5>
@@ -948,9 +928,7 @@ function App() {
 
                   <div className="project-tech">
                     {project.technologies.map((technology) => (
-                      <span key={technology}>
-                        {technology}
-                      </span>
+                      <span key={technology}>{technology}</span>
                     ))}
                   </div>
 
@@ -975,28 +953,87 @@ function App() {
             <SectionHeading
               label="ACADEMIC BACKGROUND"
               title="Education"
-              description="My academic journey and educational qualifications."
+              description="My academic journey, qualifications and learning milestones."
             />
 
-            <div className="education-list">
-              {education.map((item) => (
-                <div className="education-card" key={item.degree}>
-                  <div className="education-icon">
-                    <FaGraduationCap />
+            <div className="education-timeline">
+              {education.map((item, index) => (
+                <article
+                  className={`education-card education-card-${index + 1} ${item.featured ? "education-featured" : ""
+                    }`}
+                  key={item.degree}
+                >
+                  <div className="education-timeline-marker">
+                    <span>{index + 1}</span>
                   </div>
 
-                  <div className="education-content">
-                    <span className="education-year">
-                      {item.duration}
-                    </span>
+                  <div className="education-card-inner">
+                    <div className="education-card-header">
+                      <div className="education-icon">
+                        {item.icon}
+                      </div>
 
-                    <h3>{item.degree}</h3>
-                    <h4>{item.institution}</h4>
-                    <p>{item.university}</p>
-                    <p>{item.details}</p>
-                    <strong>{item.result}</strong>
+                      <div className="education-status">
+                        <span
+                          className={`education-status-dot ${item.featured ? "current" : "completed"
+                            }`}
+                        ></span>
+                        {item.status}
+                      </div>
+                    </div>
+
+                    <div className="education-main-info">
+                      <span className="education-degree-type">
+                        {item.shortDegree}
+                      </span>
+
+                      <h3>{item.degree}</h3>
+
+                      <h4>
+                        <FaUniversity />
+                        {item.institution}
+                      </h4>
+
+                      <p className="education-university">
+                        {item.university}
+                      </p>
+                    </div>
+
+                    <div className="education-duration">
+                      <FaCalendarAlt />
+                      <span>{item.duration}</span>
+                    </div>
+
+                    <div className="education-divider"></div>
+
+                    <div className="education-learning">
+                      <h5>
+                        <FaBookOpen />
+                        Academic Highlights
+                      </h5>
+
+                      <ul>
+                        {item.details.map((detail) => (
+                          <li key={detail}>
+                            <FaCheckCircle />
+                            <span>{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="education-result">
+                      <div className="education-result-icon">
+                        <FaStar />
+                      </div>
+
+                      <div>
+                        <span>Academic Result</span>
+                        <strong>{item.result}</strong>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
