@@ -164,8 +164,8 @@ function App() {
           <a
             href={RESUME_URL}
             target="_blank"
-            rel="noreferrer"
-            aria-label="Resume"
+            rel="noopener noreferrer"
+            aria-label="Open Resume"
             className="resume-icon"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -185,15 +185,19 @@ function App() {
       </header>
 
       <main>
+        {/* HOME SECTION */}
         <section className="hero section" id="home">
           <div className="hero-content">
             <p className="eyebrow">HELLO, I'M</p>
+
             <h1>
               Pooja <span>Patel</span>
             </h1>
+
             <h2>
               BCA Student | MERN Stack Enthusiast | Data Analytics Enthusiast
             </h2>
+
             <p className="hero-description">
               I am a motivated BCA student interested in building web
               applications and exploring data analytics. I enjoy learning new
@@ -204,6 +208,7 @@ function App() {
               <a href="#projects" className="primary-btn">
                 Explore My Work
               </a>
+
               <a href="#contact" className="secondary-btn">
                 Contact Me
               </a>
@@ -213,7 +218,7 @@ function App() {
               <a
                 href="https://github.com/PoojaPatelX13"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="GitHub"
               >
                 <svg viewBox="0 0 24 24">
@@ -224,7 +229,7 @@ function App() {
               <a
                 href="https://www.linkedin.com/in/pooja-patel-48666a386"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
                 <svg viewBox="0 0 24 24">
@@ -247,7 +252,7 @@ function App() {
               <a
                 href={RESUME_URL}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Resume"
               >
                 <svg viewBox="0 0 24 24">
@@ -269,14 +274,17 @@ function App() {
               />
               <div className="image-placeholder">PP</div>
             </div>
+
             <div className="floating-tag">
               Aspiring Software Developer
             </div>
           </div>
         </section>
 
+        {/* ABOUT SECTION */}
         <section className="section about-section" id="about">
           <p className="eyebrow">GET TO KNOW ME</p>
+
           <h2 className="section-title">
             About <span>Me</span>
           </h2>
@@ -284,17 +292,20 @@ function App() {
           <div className="about-content">
             <div>
               <h3>Building skills. Creating possibilities.</h3>
+
               <p>
                 I am a Bachelor of Computer Applications student at Aditya
                 Institute of Management Studies and Research, Bengaluru City
                 University. I am passionate about technology, web development,
                 and data analytics.
               </p>
+
               <p>
                 Through academic work, internships, and personal projects, I
                 have gained practical exposure to programming, frontend
                 development, backend development, and data analysis.
               </p>
+
               <p>
                 I am a hardworking, responsible, and quick learner who enjoys
                 improving my technical skills and taking on new challenges.
@@ -303,7 +314,7 @@ function App() {
               <a
                 href={RESUME_URL}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="primary-btn"
               >
                 View My Resume ↗
@@ -315,14 +326,17 @@ function App() {
                 <strong>10+</strong>
                 <span>Projects</span>
               </div>
+
               <div className="stat-card">
                 <strong>2</strong>
                 <span>Internships</span>
               </div>
+
               <div className="stat-card">
                 <strong>2024–27</strong>
                 <span>BCA Journey</span>
               </div>
+
               <div className="stat-card">
                 <strong>6+</strong>
                 <span>Certificates</span>
@@ -331,8 +345,10 @@ function App() {
           </div>
         </section>
 
+        {/* SKILLS SECTION */}
         <section className="section" id="skills">
           <p className="eyebrow">WHAT I WORK WITH</p>
+
           <h2 className="section-title">
             My <span>Skills</span>
           </h2>
@@ -341,6 +357,7 @@ function App() {
             {skillGroups.map((group) => (
               <div className="skill-card" key={group.title}>
                 <h3>{group.title}</h3>
+
                 <div className="skill-tags">
                   {group.skills.map((skill) => (
                     <span key={skill}>{skill}</span>
@@ -351,8 +368,10 @@ function App() {
           </div>
         </section>
 
+        {/* EXPERIENCE SECTION */}
         <section className="section" id="experience">
           <p className="eyebrow">MY PROFESSIONAL JOURNEY</p>
+
           <h2 className="section-title">
             Internship <span>Experience</span>
           </h2>
@@ -363,8 +382,10 @@ function App() {
                 <h3>Data Analytics Intern</h3>
                 <p>Thiranex EduTech LLP</p>
               </div>
+
               <span>July – August 2026</span>
             </div>
+
             <ul>
               <li>
                 Worked on sales and revenue analysis using Microsoft Excel.
@@ -384,14 +405,18 @@ function App() {
                 <h3>Web Development Intern</h3>
                 <p>Thiranex EduTech LLP</p>
               </div>
+
               <span>July – August 2026</span>
             </div>
+
             <ul>
               <li>
                 Practiced creating web pages using HTML, CSS, JavaScript, and
                 Bootstrap.
               </li>
-              <li>Worked on webpage layouts and user interface improvements.</li>
+              <li>
+                Worked on webpage layouts and user interface improvements.
+              </li>
               <li>
                 Practiced testing webpage functionality and responsiveness.
               </li>
@@ -399,8 +424,10 @@ function App() {
           </div>
         </section>
 
+        {/* PROJECTS SECTION */}
         <section className="section" id="projects">
           <p className="eyebrow">SOME THINGS I'VE BUILT</p>
+
           <h2 className="section-title">
             My <span>Projects</span>
           </h2>
@@ -411,20 +438,25 @@ function App() {
                 <div className="project-number">
                   {String(index + 1).padStart(2, "0")}
                 </div>
+
                 <p className="project-category">{project.category}</p>
+
                 <h3>{project.title}</h3>
+
                 <p className="project-description">
                   {project.description}
                 </p>
+
                 <div className="project-tech">
                   {project.tech.map((tech) => (
                     <span key={tech}>{tech}</span>
                   ))}
                 </div>
+
                 <a
                   href={project.link}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="project-link"
                 >
                   View Project ↗
@@ -434,16 +466,21 @@ function App() {
           </div>
         </section>
 
+        {/* EDUCATION SECTION */}
         <section className="section" id="education">
           <p className="eyebrow">MY ACADEMIC BACKGROUND</p>
+
           <h2 className="section-title">
             <span>Education</span>
           </h2>
 
           <div className="education-card">
             <span className="education-year">2024 – 2027</span>
+
             <h3>Bachelor of Computer Applications (BCA)</h3>
+
             <p>Aditya Institute of Management Studies and Research</p>
+
             <p>Bengaluru City University, Bengaluru</p>
           </div>
 
@@ -458,8 +495,10 @@ function App() {
           </div>
         </section>
 
+        {/* CERTIFICATIONS SECTION */}
         <section className="section" id="certifications">
           <p className="eyebrow">CONTINUOUS LEARNING</p>
+
           <h2 className="section-title">
             My <span>Certifications</span>
           </h2>
@@ -474,11 +513,14 @@ function App() {
           </div>
         </section>
 
+        {/* CONTACT SECTION */}
         <section className="section contact-section" id="contact">
           <p className="eyebrow">LET'S CONNECT</p>
+
           <h2 className="section-title">
             Get In <span>Touch</span>
           </h2>
+
           <p>
             I am always open to connecting, learning, and exploring new
             opportunities.
@@ -489,10 +531,12 @@ function App() {
               <span>✉</span>
               poojapatel53032@gmail.com
             </a>
+
             <a href="tel:+918652136933">
               <span>☎</span>
               +91 8652136933
             </a>
+
             <p>
               <span>⌖</span>
               Bengaluru, Karnataka, India
@@ -503,29 +547,38 @@ function App() {
             <a
               href="https://github.com/PoojaPatelX13"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               GitHub ↗
             </a>
+
             <a
               href="https://www.linkedin.com/in/pooja-patel-48666a386"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               LinkedIn ↗
             </a>
-            <a href={RESUME_URL} target="_blank" rel="noreferrer">
+
+            <a
+              href={RESUME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Resume ↗
             </a>
           </div>
         </section>
       </main>
 
+      {/* FOOTER */}
       <footer className="footer">
         <a href="#home" className="logo">
           Pooja<span>.</span>
         </a>
+
         <p>Designed & built by Pooja Patel</p>
+
         <p>© {new Date().getFullYear()} All rights reserved.</p>
       </footer>
     </div>
