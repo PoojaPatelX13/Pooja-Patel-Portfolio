@@ -2,8 +2,7 @@
 import { useState } from "react";
 import "./App.css";
 
-const RESUME_URL =
-  "https://drive.google.com/file/d/1nitZtYga8Duy-Ikg_mk9nbDyRmU4nb-G/view?usp=drivesdk";
+const RESUME_URL = "/PoojaPatelX13%20Resume.pdf";
 
 const projects = [
   {
