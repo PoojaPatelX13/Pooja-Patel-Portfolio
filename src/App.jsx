@@ -33,6 +33,7 @@ import {
   FaStar,
 } from "react-icons/fa";
 
+import BlurText from "./components/BlurText";
 import "./App.css";
 
 const RESUME_URL = "/PoojaPatelX13%20Resume.pdf";
@@ -69,9 +70,9 @@ const navigation = [
 
 const highlights = [
   {
-    number: "10+",
-    title: "Projects",
-    description: "Academic and practical projects",
+    number: "4",
+    title: "Featured Projects",
+    description: "Deployed practical projects",
     icon: <FaProjectDiagram />,
   },
   {
@@ -81,9 +82,9 @@ const highlights = [
     icon: <FaBriefcase />,
   },
   {
-    number: "12",
-    title: "Certificates & Recognition",
-    description: "IBM and Thiranex credentials",
+    number: "6",
+    title: "Certificates",
+    description: "IBM SkillsBuild and Thiranex credentials",
     icon: <FaCertificate />,
   },
   {
@@ -101,7 +102,7 @@ const skillGroups = [
     title: "Programming Languages",
     icon: <FaCode />,
     description:
-      "Programming fundamentals and writing logical solutions using:",
+      "Programming fundamentals and logical problem-solving using:",
     skills: ["Python", "JavaScript"],
   },
   {
@@ -109,7 +110,7 @@ const skillGroups = [
     icon: <FaLaptopCode />,
     description:
       "Building responsive and user-friendly web interfaces using:",
-    skills: ["HTML", "CSS", "Bootstrap", "React.js"],
+    skills: ["HTML", "Bootstrap", "React.js"],
   },
   {
     title: "Backend Development",
@@ -132,7 +133,7 @@ const skillGroups = [
       "Practicing data organization, analysis and visual presentation using:",
     skills: [
       "Microsoft Excel",
-      "Data Visualisation",
+      "Data Visualization",
       "Customer Segmentation",
     ],
   },
@@ -153,8 +154,12 @@ const internships = [
     company: "Thiranex EduTech LLP",
     duration: "July 2026 – August 2026",
     credential: "THX-JUL0926-125",
+    certificate:
+      "https://drive.google.com/file/d/1zEGAsajmqgF31Tk_fXEeNmVM9qu6eezm/view?usp=drivesdk",
+    lor:
+      "https://drive.google.com/file/d/1U4fGmOy0_GzotfzcIDUmRT63Rr6refQB/view?usp=drivesdk",
     description:
-      "Designed and constructed responsive user interfaces using HTML, CSS, JavaScript, and Bootstrap. Optimized website layout structures for seamless multi-device rendering and cross-browser support. Tested, debugged, and refined front-end components to enhance overall user experience.",
+      "Designed and developed responsive user interfaces using HTML, CSS, JavaScript and Bootstrap. Practiced improving webpage layouts, multi-device rendering and front-end components.",
     learning: [
       "Practiced creating responsive web pages.",
       "Worked on webpage layouts and user interface improvements.",
@@ -166,8 +171,12 @@ const internships = [
     company: "Thiranex EduTech LLP",
     duration: "July 2026 – August 2026",
     credential: "THX-JUL0326-013",
+    certificate:
+      "https://drive.google.com/file/d/1DsRyi0SZsZDLRGZEH8V996CVSKZFqm_L/view?usp=drivesdk",
+    lor:
+      "https://drive.google.com/file/d/1xG86yNUQaxWOgD6SUEGzsPUdQuXWnJmA/view?usp=drivesdk",
     description:
-      "Cleaned, preprocessed, and structured raw datasets using Microsoft Excel to ensure data integrity. Executed exploratory data analysis and built dynamic data visualizations to track metrics. Collaborated with cross-functional teams to present key analytical findings and reports.",
+      "Cleaned, preprocessed and structured datasets using Microsoft Excel. Practiced exploratory data analysis and created data visualizations to present analytical findings.",
     learning: [
       "Practiced data cleaning and preprocessing.",
       "Performed exploratory data analysis.",
@@ -176,14 +185,15 @@ const internships = [
   },
 ];
 
-// PROJECTS
+// PROJECTS — EXACTLY FOUR
 
 const projects = [
   {
     title: "Book Basket",
     category: "MERN Stack",
+    number: "01",
     description:
-      "An online library management system developed using the MERN Stack. The application focuses on helping users explore books and organize their personal reading library.",
+      "An online library management system developed using the MERN Stack. The application helps users explore books and organize their personal reading library.",
     features: [
       "Book search and exploration",
       "Book details and information",
@@ -192,24 +202,12 @@ const projects = [
     ],
     technologies: ["MongoDB", "Express.js", "React.js", "Node.js"],
     github: "https://github.com/PoojaPatelX13/Book-Basket",
-  },
-  {
-    title: "Destiny Travels",
-    category: "Backend Development",
-    description:
-      "A travel destination management API developed using Node.js, Express.js and MongoDB. It demonstrates backend development and database operations.",
-    features: [
-      "Create and manage destinations",
-      "Read and retrieve records",
-      "Update and delete records",
-      "Filtering, sorting and pagination",
-    ],
-    technologies: ["Node.js", "Express.js", "MongoDB", "Postman"],
-    github: "https://github.com/PoojaPatelX13/Destiny-Travels",
+    live: "https://book-basket-puce.vercel.app/",
   },
   {
     title: "Technika Courses",
     category: "React Development",
+    number: "02",
     description:
       "A React-based course listing application that organizes technical and programming courses with category-based filtering.",
     features: [
@@ -220,10 +218,27 @@ const projects = [
     ],
     technologies: ["React.js", "JavaScript", "CSS"],
     github: "https://github.com/PoojaPatelX13/Technika-Courses",
+    live: "https://technika-course.vercel.app/",
+  },
+  {
+    title: "Bit Demo",
+    category: "Web Development",
+    number: "03",
+    description:
+      "A practical web development project created to practice website structure, layout and front-end implementation.",
+    features: [
+      "Webpage structure",
+      "Front-end implementation",
+      "Responsive interface practice",
+    ],
+    technologies: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/PoojaPatelX13/Bit-Demo",
+    live: "https://bit-demo-deploy.vercel.app/",
   },
   {
     title: "Cinescope",
     category: "React Development",
+    number: "04",
     description:
       "A movie browsing application developed with React. It provides an interface for exploring movies and managing a personal watchlist.",
     features: [
@@ -233,94 +248,15 @@ const projects = [
     ],
     technologies: ["React.js", "JavaScript", "CSS"],
     github: "https://github.com/PoojaPatelX13/Cinescope",
-  },
-  {
-    title: "Foodie Card",
-    category: "Web Development",
-    description:
-      "A web development practice project focused on creating a structured and visually appealing food-related card interface.",
-    features: [
-      "Card-based layout",
-      "User interface practice",
-    ],
-    technologies: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/PoojaPatelX13/Foodie-Card",
-  },
-  {
-    title: "Bit Demo",
-    category: "Web Development",
-    description:
-      "A practical web development project created to practice website structure, layout and frontend implementation.",
-    features: [
-      "Webpage structure",
-      "Frontend practice",
-    ],
-    technologies: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/PoojaPatelX13/Bit-Demo",
-  },
-  {
-    title: "Type Rush",
-    category: "Web Development",
-    description:
-      "A typing practice project focused on interactive user interface development and JavaScript functionality.",
-    features: [
-      "Typing practice interface",
-      "Interactive functionality",
-    ],
-    technologies: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/PoojaPatelX13/Type-Rush-",
-  },
-  {
-    title: "Sales & Revenue Dashboard",
-    category: "Data Analytics",
-    description:
-      "A data analytics project focused on organizing sales information and presenting business performance through an Excel dashboard.",
-    features: [
-      "Sales data organization",
-      "Revenue analysis",
-      "Dashboard visualisation",
-    ],
-    technologies: ["Microsoft Excel", "Data Analytics"],
-    github:
-      "https://github.com/PoojaPatelX13/sales-revenue-analysis-dashboard",
-  },
-  {
-    title: "Customer Segmentation",
-    category: "Data Analytics",
-    description:
-      "A customer segmentation project focused on analyzing customer data and identifying groups based on patterns in the dataset.",
-    features: [
-      "Customer data analysis",
-      "Segmentation practice",
-      "Interpretation of customer patterns",
-    ],
-    technologies: ["Python", "Data Analytics"],
-    github:
-      "https://github.com/PoojaPatelX13/customer-segmentation-project",
-  },
-  {
-    title: "Predictive Analytics",
-    category: "Data Analytics",
-    description:
-      "A practical analytics project focused on exploring data and working with predictive analysis concepts.",
-    features: [
-      "Dataset exploration",
-      "Data preparation",
-      "Predictive analytics practice",
-    ],
-    technologies: ["Python", "Data Analytics"],
-    github:
-      "https://github.com/PoojaPatelX13/predictive-analytics-project",
+    live: "https://cinescope-deploy.vercel.app/",
   },
 ];
 
 const projectFilters = [
   "All",
   "MERN Stack",
-  "Backend Development",
   "React Development",
   "Web Development",
-  "Data Analytics",
 ];
 
 // EDUCATION
@@ -364,94 +300,62 @@ const education = [
   },
 ];
 
-// CERTIFICATES
+// CERTIFICATES — SIX RESUME CERTIFICATES
 
 const certificates = [
   {
-    title: "AI Fundamentals for Understanding AI",
-    issuer: "IBM",
-    date: "February 2026",
+    title: "Data Analytics Internship",
+    issuer: "Thiranex EduTech LLP",
+    date: "July 2026",
     description:
-      "Developed foundational knowledge of Artificial Intelligence, including core concepts, applications, opportunities, and responsible considerations when using AI.",
+      "Internship certificate recognizing practical experience in data cleaning, analysis, visualization and reporting.",
+    link:
+      "https://drive.google.com/file/d/1DsRyi0SZsZDLRGZEH8V996CVSKZFqm_L/view?usp=drivesdk",
   },
   {
-    title: "AI Fundamentals: Language and Vision in AI",
-    issuer: "IBM",
-    date: "February 2026",
+    title: "Web Development Internship",
+    issuer: "Thiranex EduTech LLP",
+    date: "July 2026",
     description:
-      "Built a foundation in Artificial Intelligence, covering basic AI concepts, applications, capabilities, and the impact of AI across different industries.",
+      "Internship certificate recognizing practical experience in responsive web development and front-end technologies.",
+    link:
+      "https://drive.google.com/file/d/1zEGAsajmqgF31Tk_fXEeNmVM9qu6eezm/view?usp=drivesdk",
   },
   {
-    title: "Artificial Intelligence Fundamentals",
-    issuer: "IBM",
+    title: "AI Fundamentals",
+    issuer: "IBM SkillsBuild",
     date: "February 2026",
     description:
-      "Built foundational knowledge of Artificial Intelligence concepts, applications and capabilities.",
-  },
-  {
-    title: "Getting Started with AI",
-    issuer: "IBM",
-    date: "February 2026",
-    description:
-      "Developed a basic understanding of Artificial Intelligence, its key concepts, common applications, and how AI is used to solve real-world problems.",
-  },
-  {
-    title: "Job Application Essentials",
-    issuer: "IBM",
-    date: "February 2026",
-    description:
-      "Learned essential skills for preparing job applications, including resume preparation, job searching, professional communication, and interview readiness.",
-  },
-  {
-    title: "Project Management Fundamentals",
-    issuer: "IBM",
-    date: "February 2026",
-    description:
-      "Learned the basic principles of project management, including project planning, organization, teamwork, time management, and completing projects effectively.",
+      "Developed foundational knowledge of Artificial Intelligence concepts and applications.",
+    link:
+      "https://drive.google.com/file/d/125D9D9AtAF8erzxq97Ti464KpBVME4c_/view?usp=drivesdk",
   },
   {
     title: "Getting Started with Generative AI",
-    issuer: "IBM",
+    issuer: "IBM SkillsBuild",
     date: "July 2026",
     description:
-      "Learned the fundamentals of Generative AI, including how AI can generate text and other content, along with practical applications and responsible use of generative AI tools.",
+      "Learned the fundamentals of Generative AI, its practical applications and responsible use.",
+    link:
+      "https://drive.google.com/file/d/1D_8d31qNFH7Bi2gBjlin6u881okFhonJ/view?usp=drivesdk",
   },
   {
-    title: "AI Literacy",
-    issuer: "IBM",
-    date: "July 2026",
+    title: "AI Language and Vision",
+    issuer: "IBM SkillsBuild",
+    date: "February 2026",
     description:
-      "Gained a foundational understanding of Artificial Intelligence, including key AI concepts, applications, and the role of AI in everyday life and the workplace.",
+      "Explored foundational concepts and applications of language and vision in Artificial Intelligence.",
+    link:
+      "https://drive.google.com/file/d/1MZB3Ob0L91P-AXVjkKlfEs0iRQ2iA4hE/view?usp=drivesdk",
   },
   {
-    title: "Getting Started with Cybersecurity",
-    issuer: "IBM",
-    date: "October 2025",
+    title: "Project Management",
+    issuer: "IBM SkillsBuild",
+    date: "February 2026",
     description:
-      "Learned basic cybersecurity concepts, common digital threats, online safety, and essential practices for protecting digital information.",
-  },
-  {
-    title: "Web Development Intern",
-    issuer: "Thiranex EduTech LLP",
-    date: "July 2026",
-    credential: "THX-JUL0926-125",
-    description:
-      "Internship credential recognizing practical exposure to responsive web development, frontend layouts and user interface improvements.",
-  },
-  {
-    title: "Data Analytics Intern",
-    issuer: "Thiranex EduTech LLP",
-    date: "July 2026",
-    credential: "THX-JUL0326-013",
-    description:
-      "Internship credential recognizing practical exposure to data cleaning, exploratory analysis, data visualization and reporting.",
-  },
-  {
-    title: "Letters of Recommendation – Data Analytics & Web Development",
-    issuer: "Thiranex EduTech LLP",
-    date: "November 2026",
-    description:
-      "Recognition for technical contributions, analytical skills, problem-solving, dedication and professional conduct during internship experiences.",
+      "Learned project planning, organization, teamwork and time management fundamentals.",
+    link:
+      "https://drive.google.com/file/d/1RUul2-fepc4_XIO2GY1Vzi4yTUd4Oc5h/view?usp=drivesdk",
   },
 ];
 
@@ -520,7 +424,7 @@ function SectionHeading({ label, title, description }) {
 // MAIN APP
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState("All");
 
@@ -573,6 +477,7 @@ function App() {
               title="View Resume"
             >
               <FaFilePdf />
+              <span>Resume</span>
             </a>
           </nav>
 
@@ -581,6 +486,7 @@ function App() {
               className="theme-toggle"
               onClick={() => setDarkMode(!darkMode)}
               aria-label="Toggle theme"
+              title="Toggle theme"
             >
               {darkMode ? <FaSun /> : <FaMoon />}
             </button>
@@ -602,12 +508,20 @@ function App() {
         <section className="hero-section" id="home">
           <div className="hero-container">
             <div className="hero-content">
-              <span className="hero-greeting">Hello, I'm</span>
+              <span className="hero-greeting">
+                Hello, I'm Pooja
+              </span>
 
-              <h1>
-                {personalInfo.name}
-                <span>.</span>
-              </h1>
+              <div className="hero-name">
+                <BlurText
+                  text={personalInfo.name}
+                  delay={100}
+                  animateBy="letters"
+                  direction="top"
+                  className="hero-blur-text"
+                />
+                <span className="hero-name-dot">.</span>
+              </div>
 
               <h2>{personalInfo.title}</h2>
 
@@ -688,6 +602,10 @@ function App() {
               </div>
             </div>
           </div>
+
+          <a href="#about" className="hero-scroll">
+            Scroll to explore <span>↓</span>
+          </a>
         </section>
 
         {/* HIGHLIGHTS */}
@@ -738,10 +656,10 @@ function App() {
 
                 <p>
                   I have gained practical exposure to Python,
-                  JavaScript, HTML, CSS, Bootstrap, React.js,
-                  Node.js, Express.js, MongoDB and Microsoft Excel.
-                  I have also completed internship experiences in
-                  Web Development and Data Analytics at Thiranex
+                  JavaScript, HTML, Bootstrap, React.js, Node.js,
+                  Express.js, MongoDB and Microsoft Excel. I have
+                  also completed internship experiences in Web
+                  Development and Data Analytics at Thiranex
                   EduTech LLP.
                 </p>
 
@@ -868,6 +786,28 @@ function App() {
                     Credential ID:{" "}
                     <strong>{internship.credential}</strong>
                   </div>
+
+                  <div className="internship-links">
+                    <a
+                      href={internship.certificate}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaCertificate />
+                      View Certificate
+                      <FaExternalLinkAlt />
+                    </a>
+
+                    <a
+                      href={internship.lor}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaAward />
+                      View LOR
+                      <FaExternalLinkAlt />
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
@@ -879,9 +819,9 @@ function App() {
         <section className="projects-section section" id="projects">
           <div className="container">
             <SectionHeading
-              label="MY WORK"
+              label="SELECTED WORK"
               title="Projects"
-              description="A collection of academic and practical projects demonstrating my learning and development."
+              description="A selection of four practical projects. Explore the live applications or view their source code."
             />
 
             <div className="project-filters">
@@ -900,13 +840,15 @@ function App() {
 
             <div className="projects-grid">
               {filteredProjects.map((project) => (
-                <div className="project-card" key={project.title}>
+                <article className="project-card" key={project.title}>
                   <div className="project-card-top">
+                    <span className="project-number">
+                      {project.number}
+                    </span>
+
                     <span className="project-category">
                       {project.category}
                     </span>
-
-                    <FaCode className="project-card-icon" />
                   </div>
 
                   <h3>{project.title}</h3>
@@ -932,15 +874,26 @@ function App() {
                     ))}
                   </div>
 
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="project-link"
-                  >
-                    View on GitHub <FaExternalLinkAlt />
-                  </a>
-                </div>
+                  <div className="project-links">
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project-link live-project-link"
+                    >
+                      Live Demo <FaArrowRight />
+                    </a>
+
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project-link"
+                    >
+                      <FaGithub /> GitHub <FaExternalLinkAlt />
+                    </a>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
@@ -1049,17 +1002,23 @@ function App() {
             <SectionHeading
               label="LEARNING & DEVELOPMENT"
               title="Certificates & Achievements"
-              description="Certifications and recognition gained through learning and professional experiences."
+              description="Six selected certificates from my learning and professional experiences. Open each link to view the proof."
             />
 
             <div className="certificates-grid">
-              {certificates.map((certificate) => (
-                <div
+              {certificates.map((certificate, index) => (
+                <article
                   className="certificate-card"
                   key={certificate.title}
                 >
-                  <div className="certificate-icon">
-                    <FaAward />
+                  <div className="certificate-card-top">
+                    <div className="certificate-icon">
+                      <FaAward />
+                    </div>
+
+                    <span className="certificate-number">
+                      0{index + 1}
+                    </span>
                   </div>
 
                   <span className="certificate-date">
@@ -1070,13 +1029,17 @@ function App() {
                   <h4>{certificate.issuer}</h4>
                   <p>{certificate.description}</p>
 
-                  {certificate.credential && (
-                    <div className="credential-line">
-                      Credential ID:{" "}
-                      <strong>{certificate.credential}</strong>
-                    </div>
-                  )}
-                </div>
+                  <a
+                    href={certificate.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="certificate-link"
+                  >
+                    <FaFilePdf />
+                    View Certificate
+                    <FaExternalLinkAlt />
+                  </a>
+                </article>
               ))}
             </div>
           </div>
